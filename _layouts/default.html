@@ -1,18 +1,40 @@
 <!doctype html>
-<!--[if IE 6 ]><html lang="en" class="no-js ie6"><![endif]-->
-<!--[if IE 7 ]><html lang="en" class="no-js ie7"><![endif]-->
-<!--[if IE 8 ]><html lang="en" class="no-js ie8"><![endif]-->
-<!--[if IE 9 ]><html lang="en" class="no-js ie9"><![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--><html lang="en" class="no-js"><!--<![endif]-->
+
+<!--[if lt IE 7]><html class="no-js ie6 oldie" lang="en"><![endif]-->
+<!--[if IE 7]><html class="no-js ie7 oldie" lang="en"><![endif]-->
+<!--[if IE 8]><html class="no-js ie8 oldie" lang="en"><![endif]-->
+
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-    <meta charset="utf-8">
-    <title>{{ page.title }}</title>
-    <link rel="shortcut icon" href="/static/favicon.ico"/>
-    <link rel="alternate" type="application/rss+xml" href="http://feeds.feedburner.com/lancejian"/>
-    <link href='http://fonts.googleapis.com/css?family=Special+Elite|Droid+Sans|Inconsolata' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/static/css/styles.css"/>
+  <meta charset="utf-8">
+
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>{{ page.title }}</title>
+  <meta name="description" content="More productive with Linux and Python">
+  <meta name="author" content="Lance Jian">
+
+  
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="alternate" type="application/rss+xml" href="http://feeds.feedburner.com/lancejian"/>
+
+  
+
+  
+  
+  <link rel="stylesheet" type="text/css" href="/static/css/style.css"/>
+  <link href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700|Special+Elite" rel="stylesheet" type="text/css"/>
+  
+
+  
+
+  
+  <script src="/static/js/libs/modernizr-2.0.6.min.js"></script>
+</head>
 
 <body>
+
 <header>
     <div id="banner">
         <div class="container">
@@ -24,8 +46,7 @@
         </div>
     </div>
     <hgroup id="heading" class="container">
-    <h1><img id="logo" src="/static/images/logo.png" alt="Logo" /><a href="/">{{ page.title }}</a></h1>
-    <h2>{{ page.subtitle }}</h2>
+    <h1><a href="/"><img id="logo" src="/static/img/logo.png" alt="Logo"/>Lance's Blog</a></h1>
     </hgroup>
 </header>
 <div class="container">
@@ -33,19 +54,15 @@
 <section id="main_section">
 {{ contents }}
 </section>
-<section id="blogroll" class="sub-section" >
-    <ul><!--
-        <li><h1>Posts</h1></li>
-        <li><h1>Categories</h1></li>
-        -->
-        <li><div id="cse-search-form" style="width: 100%;">Loading...</div></li>
-        <li><h1>Tags</h1></li>
-        <li><h1><a href="http://twitter.com/lancelotj/"><img src="http://static.tumblr.com/oz01bku/kqDlqu0bv/twitter.png" alt="twitter"/></a></h1>
-            <ul id="tweets"></ul>
-        </li>
+<section id="blogroll" class="sub_section">
+    <ul>
+        <li><h1>Search</h1>
+        <div id="cse-search-form" style="width: 100%;">Loading...</div></li>
+        
+        
         <li><h1>Social</h1>
         <ul>
-            <li><script type="text/javascript" src="http://connect.facebook.net/en_US/all.js#appId=237736936261652&amp;xfbml=1"></script><div id="fb-root"></div><fb:like href="http://www.lancejian.com" send="false" width="180" show_faces="false" font=""></fb:like></li>
+            <li><div class="fb-like" data-href="http://www.lancejian.com" data-send="false" data-width="180" data-show-faces="false"></div></li>
             <li><a href="http://twitter.com/lancelotj" class="twitter-follow-button" data-show-count="false">Follow @lancelotj</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></li>
             <li><p><a href="http://feeds.feedburner.com/lancejian" rel="alternate" type="application/rss+xml"><img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="" style="vertical-align:middle;border:0"/></a>&nbsp;<a href="http://feeds.feedburner.com/lancejian" rel="alternate" type="application/rss+xml">Subscribe in a reader</a></p></li>
         </ul>
@@ -65,7 +82,24 @@
     <p>&copy; lancejian.com. All rights reserved. </p>
 </footer>
 </div>
-<script src="http://www.google.com/jsapi" type="text/javascript"></script>
-<script type="text/javascript" src="/static/js/site.js"></script>
+<div id="fb-root"></div>
+  
+
+  
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script>window.jQuery||document.write('<script src="/static/js/libs/jquery-1.6.2.min.js"><\/script>');</script>
+
+  
+  <script defer src="/static/js/script.js"></script>
+  
+
+	
+  
+  <script>window._gaq=[["_setAccount","UAXXXXXXXX1"],["_trackPageview"],["_trackPageLoadTime"]];Modernizr.load({load:("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js"});</script>
+
+  
+  <!--[if lt IE 7 ]><script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})});</script><![endif]-->
+  
 </body>
 </html>
