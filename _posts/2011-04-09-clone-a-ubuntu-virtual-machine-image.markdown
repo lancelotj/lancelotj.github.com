@@ -1,6 +1,5 @@
 ---
 layout: post
-categories: [kvm, ubuntu]
 tumblr_id: 9818120415
 date: 2011-04-09 02:48:00 UTC
 title: Clone a Ubuntu Virtual Machine Image

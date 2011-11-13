@@ -1,9 +1,8 @@
 ---
 layout: post
-category: pil
 tumblr_id: 9810456800
 date: 2011-04-04 23:46:00 UTC
-title: PIL IOError: decoder jpeg not available
+title: "PIL IOError: decoder jpeg not available"
 ---
 
 PIL IOError: decoder jpeg not available

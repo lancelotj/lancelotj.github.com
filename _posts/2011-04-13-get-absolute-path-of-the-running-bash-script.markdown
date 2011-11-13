@@ -1,6 +1,5 @@
 ---
 layout: post
-category: bash
 tumblr_id: 9817706219
 date: 2011-04-13 04:00:00 UTC
 title: Get Absolute Path of the Running Bash Script

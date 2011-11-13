@@ -1,6 +1,5 @@
 ---
 layout: post
-category: ubuntu
 tumblr_id: 9818375231
 date: 2011-04-19 04:00:00 UTC
 title: Install Faenza in Ubuntu
