@@ -1,3 +1,4 @@
 _site
 *.pyc
 *.swp
+.DS_Store
