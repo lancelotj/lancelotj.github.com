@@ -1,0 +1,12 @@
+---
+layout: page
+has_comment: true
+---
+<article>
+  <header><h1 class="entry-title">{{ page.title }}</h1>
+  <p>Posted: {{ page.date|date_to_string }} | <a class="dsq-comment-count" href="{{ page.url }}#disqus_thread">Comments</a></p>
+  </header>
+  <div class="entry-content">{{ content }}</div>
+</article>
+<div id="disqus_thread"></div>
+</script>

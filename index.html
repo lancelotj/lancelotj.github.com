@@ -1,6 +1,5 @@
 ---
 layout: default
-title: Home
 ---
 <ul>
 {% for post in site.posts limit:3 %}
@@ -14,6 +13,5 @@ title: Home
 </article></li>
 {% endfor %}
 </ul>
-<p>
-total pages: {{ paginator.total_pages }}
-</p>
+
+<p><a href="archive.html">See all posts »</a></p>

@@ -1,8 +1,8 @@
 auto: true
-
+name: Lance's Blog
 
 pygments: true
 markdown: maruku
 permalink: date
 
-paginate: 3
+# paginate: 3

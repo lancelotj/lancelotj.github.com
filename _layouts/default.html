@@ -1,113 +1,33 @@
-<!doctype html>
-
-<!--[if lt IE 7]><html class="no-js ie6 oldie" lang="en"><![endif]-->
-<!--[if IE 7]><html class="no-js ie7 oldie" lang="en"><![endif]-->
-<!--[if IE 8]><html class="no-js ie8 oldie" lang="en"><![endif]-->
-
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-
-  
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-  <title>{{ page.title }}</title>
-  <meta name="description" content="More productive with Linux and Python">
-  <meta name="author" content="Lance Jian">
-
-  
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="alternate" type="application/rss+xml" href="http://feeds.feedburner.com/lancejian"/>
-
-  
-
-  
-  
-  <link rel="stylesheet" type="text/css" href="/static/css/style.css"/>
-  <link href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700|Special+Elite" rel="stylesheet" type="text/css"/>
-  
-
-  
-
-  
-  <script src="/static/js/libs/modernizr-2.0.6.min.js"></script>
-</head>
-
-<body>
-
-<header>
-    <div id="banner">
-        <div class="container">
-            <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-            </ul>
-            </nav>
-        </div>
-    </div>
-    <hgroup id="heading" class="container">
-    <h1><a href="/"><img id="logo" src="/static/img/logo.png" alt="Logo"/>Lance's Blog</a></h1>
-    </hgroup>
-</header>
-<div class="container">
-    <div id="content">
+---
+layout: base
+---
 <section id="main_section">
 {{ content }}
 </section>
 <section id="blogroll" class="sub_section">
     <ul>
-        <li><h1>Search</h1>
-        <ul>
-            <li><div id="cse-search-form" style="width: 100%;">Loading...</div></li>
-        </ul>
-        </li>
-        
-        
-        <li><h1>Social</h1>
-        <ul>
-            <li><div class="fb-like" data-href="http://www.lancejian.com" data-send="false" data-width="180" data-show-faces="false"></div></li>
-            <li><a href="http://twitter.com/lancelotj" class="twitter-follow-button" data-show-count="false">Follow @lancelotj</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></li>
-            <li><p><a href="http://feeds.feedburner.com/lancejian" rel="alternate" type="application/rss+xml"><img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="" style="vertical-align:middle;border:0"/>&nbsp;Subscribe in a reader</a></p></li>
-        </ul>
-        </li>
-        <li><h1>Archive</h1>
-            <ul>{% for post in site.posts %}
-                <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title | xml_escape }}</a></li>{% endfor %}
+        <li>{% include search.html %}</li>
+        <li><h1>Recent</h1>
+            <div class="sidebox"><ul class="list">{% for post in site.posts limit:10 %}
+                <li> &raquo; <a href="{{ post.url }}">{{ post.title | xml_escape }}</a></li>{% endfor %}
             </ul>
-        </li>
+            <p><a href="archive.html">See all posts »</a></p>
+        </div></li>
+        <li><h1>Social</h1>
+            <div class="sidebox"><ul>
+                <li><div class="fb-like" data-href="http://www.lancejian.com" data-send="false" data-width="180" data-show-faces="false"></div></li>
+                <li><a href="http://twitter.com/lancelotj" class="twitter-follow-button" data-show-count="false">Follow @lancelotj</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></li>
+                <li><p><a href="http://feeds.feedburner.com/lancejian" rel="alternate" type="application/rss+xml"><img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="" style="vertical-align:middle;border:0"/>&nbsp;Subscribe</a></p></li>
+            </ul>
+        </div></li>
         <li><h1>Links</h1>
-            <ul><li><a href="http://www.ui3net.com/">AoQurage</a></li>
-                <li><a href="http://www.vcn.bc.ca/~dugan/">Dugan Chen's Homepage</a></li>
-                <li><a href="http://www.k3vin.net/">k3vin.net</a></li>
-                <li><a href="http://www.owenhope.ca/">Owen Hope</a></li>
-                <li><a href="http://www.ynotmartins.com/">Tony Martins</a></li>
+            <div class="sidebox">
+            <ul class="list"><li>» <a href="http://www.ui3net.com/">AoQurage</a></li>
+                <li>» <a href="http://www.vcn.bc.ca/~dugan/">Dugan Chen's Homepage</a></li>
+                <li>» <a href="http://www.k3vin.net/">k3vin.net</a></li>
+                <li>» <a href="http://www.owenhope.ca/">Owen Hope</a></li>
+                <li>» <a href="http://www.ynotmartins.com/">Tony Martins</a></li>
             </ul> 
-        </li>
+        </div></li>
     </ul>
 </section>
-</div>
-<footer>
-    <p>&copy; lancejian.com. All rights reserved. </p>
-</footer>
-</div>
-<div id="fb-root"></div>
-  
-
-  
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-  <script>window.jQuery||document.write('<script src="/static/js/libs/jquery-1.6.2.min.js"><\/script>');</script>
-  <script src="http://www.google.com/jsapi" type="text/javascript"></script>
-
-  
-  <script type="text/javascript" src="/static/js/script.js"></script>
-  
-	
-  
-  <script>var disqus_shortname="lancejian";window._gaq=[["_setAccount","UA-1637721-4"],["_trackPageview"],["_trackPageLoadTime"]];Modernizr.load([{load:"http://"+disqus_shortname+".disqus.com/count.js"},{load:("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js"}]);</script>
-
-  
-  <!--[if lt IE 7 ]><script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-    <script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})});</script><![endif]-->
-  
-</body>
-</html>
