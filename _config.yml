@@ -5,4 +5,5 @@ pygments: true
 markdown: maruku
 permalink: date
 
+url: "http://www.lancejian.com"
 # paginate: 3
