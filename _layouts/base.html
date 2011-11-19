@@ -38,7 +38,7 @@
         <div class="container">
             <nav>
             <ul>
-                {% if page.active == 'Home' %}<li class="active">Home</li>{% else %}<li><a href='/'>Home</a></li>{% endif %}
+                <li {% if page.active == 'Home' %} class="active"{% endif %}><a href='/'>Home</a></li>
             </ul>
             </nav>
         </div>
