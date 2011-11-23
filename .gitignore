@@ -2,3 +2,4 @@ _site
 *.pyc
 *.swp
 .DS_Store
+_plugins
