@@ -1,52 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-      <loc>/404.html</loc>
+      <loc>http://www.lancejian.com/404.html</loc>
       <lastmod>2011-11-13</lastmod>
   </url>
   <url>
-      <loc>/archive.html</loc>
+      <loc>http://www.lancejian.com/archive.html</loc>
       <lastmod>2011-11-13</lastmod>
   </url>
   <url>
-      <loc>/</loc>
+      <loc>http://www.lancejian.com/feed.xml</loc>
+      <lastmod>2011-11-23</lastmod>
+  </url>
+  <url>
+      <loc>http://www.lancejian.com/</loc>
       <lastmod>2011-11-16</lastmod>
   </url>
   <url>
-      <loc>/projects/</loc>
+      <loc>http://www.lancejian.com/projects/</loc>
       <lastmod>2011-11-22</lastmod>
   </url>
   <url>
-      <loc>/search.html</loc>
+      <loc>http://www.lancejian.com/search.html</loc>
       <lastmod>2011-11-13</lastmod>
   </url>
   <url>
-      <loc>/2011/11/20/cant-draw-with-mouse-in-inkscape.html</loc>
+      <loc>http://www.lancejian.com/2011/11/20/cant-draw-with-mouse-in-inkscape.html</loc>
       <lastmod>2011-11-20</lastmod>
       <changefreq>never</changefreq>
   </url>
   <url>
-      <loc>/2011/08/26/my-font-for-gmail.html</loc>
+      <loc>http://www.lancejian.com/2011/08/26/my-font-for-gmail.html</loc>
       <lastmod>2011-08-26</lastmod>
       <changefreq>never</changefreq>
   </url>
   <url>
-      <loc>/2011/04/19/install-faenza-in-ubuntu.html</loc>
+      <loc>http://www.lancejian.com/2011/04/19/install-faenza-in-ubuntu.html</loc>
       <lastmod>2011-04-19</lastmod>
       <changefreq>never</changefreq>
   </url>
   <url>
-      <loc>/2011/04/13/get-absolute-path-of-the-running-bash-script.html</loc>
+      <loc>http://www.lancejian.com/2011/04/13/get-absolute-path-of-the-running-bash-script.html</loc>
       <lastmod>2011-04-13</lastmod>
       <changefreq>never</changefreq>
   </url>
   <url>
-      <loc>/2011/04/09/clone-a-ubuntu-virtual-machine-image.html</loc>
+      <loc>http://www.lancejian.com/2011/04/09/clone-a-ubuntu-virtual-machine-image.html</loc>
       <lastmod>2011-04-09</lastmod>
       <changefreq>never</changefreq>
   </url>
   <url>
-      <loc>/2011/04/04/pil-ioerror-decoder-jpeg-not-available.html</loc>
+      <loc>http://www.lancejian.com/2011/04/04/pil-ioerror-decoder-jpeg-not-available.html</loc>
       <lastmod>2011-04-04</lastmod>
       <changefreq>never</changefreq>
   </url>
