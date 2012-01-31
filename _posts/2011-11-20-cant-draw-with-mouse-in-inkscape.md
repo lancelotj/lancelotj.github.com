@@ -1,6 +1,7 @@
 ---
 title: Can't Draw in Inkscape 0.48
 layout: post
+date: 2012-01-29
 ---
 
 Sometimes big problems come from small mistakes. One day I found I can't draw
