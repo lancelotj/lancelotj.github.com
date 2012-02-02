@@ -1,6 +1,5 @@
 ---
 layout: post
-tumblr_id: 9428851617
 date: 2011-08-26 22:19:00 UTC
 title: My Font for Gmail
 ---
