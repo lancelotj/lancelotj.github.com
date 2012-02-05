@@ -16,8 +16,8 @@ Next, create a new git repository:
     cd new_git_repo
     git init
 
-Finally, use the hg-fast-export script from the directory you just checked out
-in the first step:
+Finally, use the `hg-fast-export.sh` script from the directory you just checked
+out in the first step:
 
     /path/to/hg-fast-export.sh -r /path/to/hg_repo
     git-repack -a -d -f
