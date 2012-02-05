@@ -35,14 +35,16 @@
 <body>
 <header>
     <div id="banner">
-        <div class="container">
-            <nav>
-            <ul>
-                <li {% if page.active == 'Home' %} class="active"{% endif %}><a href='/'>Home</a></li>
-                <li {% if page.active == 'Projects' %} class="active"{% endif %}><a href='/projects/'>Projects</a></li>
-            </ul>
-            </nav>
-        </div>
+      <div class="container">
+        <nav>
+          <ul>
+            <li {% if page.active == 'Home' %} class="active"{% endif %}><a href='/'>Home</a></li>
+              <li {% if page.active == 'Projects' %} class="active"{% endif %}><a href='/projects/'>Projects</a></li>
+          </ul>
+        </nav>
+        <div id="cse-search-form"><form action="/search.html" method="get"><input type="search" name="q" placeholder="Search this site..." autosave="cse-search-save" results="5"/>
+        </form></div>
+      </div>
     </div>
     {% include logo.html %}
 </header>
