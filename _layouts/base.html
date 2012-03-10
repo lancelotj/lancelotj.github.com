@@ -39,24 +39,24 @@
       </hgroup>
       <nav>
         <ul>
-          <li {% if page.active == 'Home' %} class="active"{% endif %}><a href='/'>Home</a></li>
-            <li {% if page.active == 'Projects' %} class="active"{% endif %}><a href='/projects/'>Projects</a></li>
+          <li><a href='/'{% if page.active == 'Blog' %} class="active"{% endif %}>Blog</a></li>
+          <li><a href='/projects/'{% if page.active == 'Projects' %} class="active"{% endif %}>Projects</a></li>
+          <li><a href='/about/'{% if page.active == 'About' %} class="active"{% endif %}>About</a></li>
         </ul>
       </nav>
+    </div>
   </header>
   <div id="main">
     <div class="container">
       <div id="content">
         {{ content }}
       </div>
-      <div id="sidebar">
-          <div id="search-form"><form action="/search.html" method="get"><input type="search" name="q" placeholder="Search..." autosave="cse-search-save" results="5"/>
-          </form></div>
-      </div>
     </div>
   </div>
   <footer>
+    <div class="container">
       <p>&copy; lancejian.com. All rights reserved. </p>
+    </div>
   </footer>
   
 
