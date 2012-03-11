@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2012-03-10
-title: Chane PDF File Initial View
+title: Change PDF File Initial View
 ---
 
 When you open PDF files using Adobe Reader, it will read initial view settings such as single page or double page stored in the PDF file. It's actually pretty easy to change this information in Linux:
