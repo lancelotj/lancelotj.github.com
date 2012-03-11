@@ -16,5 +16,5 @@ This extension changes the default font of Gmail to any font you like. To use it
 
 Please note that this extension works best for plain-text emails. Rich-text(HTML) emails will possibly remain its original font because those emails can set their own font for each element. Usually this doesn't bother me since they are already well-formatted.
 
-Source code is published at [my git repository](https://github.com/lancelotj/gmail-font) under MIT license.
+Source code is published at [my git repository](https://github.com/lancelotj/myfont4gmail) under MIT license.
  
