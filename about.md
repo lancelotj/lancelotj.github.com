@@ -6,7 +6,7 @@ active: About
 # About Me
 
 Hi there, I'm Lance Jian, an enthusiastic software/web designer and developer.
-I like cool technologies and I enjoying using them to make our life better.
+I like cool technologies and enjoy using them to make our life better.
 
 # Contact
 <div id="wufoo-z7x3x5">
