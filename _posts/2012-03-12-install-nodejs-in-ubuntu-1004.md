@@ -19,6 +19,6 @@ Up to this point, you are able to use the `node` command. You can then install `
 
     curl http://npmjs.org/install.sh | sudo sh 
 
-After that, it's easy to install other node.js libraries. For example to install `uglifyjs`, simply run:
+After that, it's easy to install other node.js libraries. For example, to install `uglifyjs`, simply run:
 
     sudo npm install uglify-js -g 
