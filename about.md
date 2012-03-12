@@ -10,9 +10,10 @@ I like cool technologies and enjoy using them to make our life better. That's
 also why this little website exists: I want to share the knowledge I have learned
 and the joy I have got with people.
 
-On this site, I try to make everything simple and easy. If you want to read
-certain article, just search for it. If you want to browse all the stuffs I have
-wrote, just click the [See all posts](http:///archeive.html) link.
+On this site, I try to make everything easy to read and find by simplifying it.
+There are no categories or tags. If you want to read certain article, just
+search for it. If you want to browse what I have wrote, just click the "See all
+posts" link at the bottom of the page.
 
 # Contact
 
