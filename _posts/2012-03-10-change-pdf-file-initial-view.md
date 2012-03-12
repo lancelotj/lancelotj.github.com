@@ -24,4 +24,4 @@ This adds a name in the catalog dictionary of PDF file. It will be used by the A
 
 "Column" means continuous page. "Page" means display as a single page. "Left" means start double pages  with odd-numbered pages on the left.
 
-Please note that not all PDF viewers support this setting. Only Acrobat Reader supports it.
+Please note that not all PDF viewers support this setting.
