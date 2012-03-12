@@ -6,9 +6,16 @@ active: About
 # About Me
 
 Hi there, I'm Lance Jian, an enthusiastic software/web designer and developer.
-I like cool technologies and enjoy using them to make our life better.
+I like cool technologies and enjoy using them to make our life better. That's
+also why this little website exists: I want to share the knowledge I have learned
+and the joy I have got with people.
+
+On this site, I try to make everything simple and easy. If you want to read
+certain article, just search for it. If you want to browse all the stuffs I have
+wrote, just click the [See all posts](http:///archeive.html) link.
 
 # Contact
+
 <div id="wufoo-z7x3x5">
 You can contact me by filling out my <a href="http://lancelotj.wufoo.com/forms/z7x3x5">online contact form</a>.
 </div>
