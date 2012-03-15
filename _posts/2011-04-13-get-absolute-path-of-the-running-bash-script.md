@@ -15,25 +15,25 @@ First, get the relative directory. There are two situations:
 1. If the script is supposed to be executed directly like `./script.sh`, get
    it with this code:
 
-      relative_path=`dirname $0`
+        relative_path=`dirname $0`
     
-2. If the script is supposed to be `source`ed like `source script.sh`, get it
+2. If the script is supposed to be "sourced" like `source script.sh`, get it
    with this:
 
-      relative_path=`dirname $BASH_SOURCE`
+        relative_path=`dirname $BASH_SOURCE`
 
 Once you have the relative path, it's easy to get the absolute path:
 
     absolute_path=`cd $relative_path;pwd`
 
 This method is compatible with both Linux and Mac OS. However, it's not perfect.
-There is a little defect which does not usually happen. It won't work if user
-has changed the `cd` command to something else using alias or function.
-
-In addition, there is another command only works under Linux:
+It won't work if you have changed the `cd` command to something else using alias
+or function. Although not usually happen, in this case, you can use the
+following way:
 
     absolute_path=`readlink -m $relative_path`
 
-You can pick the way the suits you best. Now `$absolute_path` is the absolute
-path of the file being executed. You can then use this variable to get other
-files which will be correct no matter the current working directory is.
+This command works only in Linux, so pick the way the suits you best. Now
+`$absolute_path` is the absolute path of the file being executed. You can then
+use this variable to get other files which will be correct no matter the current
+working directory is.
