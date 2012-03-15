@@ -1,6 +1,5 @@
 ---
 layout: post
-tumblr_id: 9817706219
 date: 2011-04-13 04:00:00 UTC
 title: Get Absolute Path of the Running Bash Script
 ---
@@ -33,7 +32,8 @@ following way:
 
     absolute_path=`readlink -m $relative_path`
 
-This command works only in Linux, so pick the way the suits you best. Now
-`$absolute_path` is the absolute path of the file being executed. You can then
-use this variable to get other files which will be correct no matter the current
-working directory is.
+This command only works in Linux, so you have to pick the way suits you
+best. Now `$absolute_path` is the absolute path of the file being executed. You
+can then use this variable to get other files which will be correct no matter
+the current working directory is.
+
