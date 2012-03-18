@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     
     
-    <title>Archive | Lance Jian</title>
+    <title>My Font for Gmail | Lance Jian</title>
     
     <meta name="author" content="Lance Jian"/>
 
@@ -23,7 +23,7 @@
     
     <link rel="stylesheet" type="text/css" href="/static/css/style.css"/>
     <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
-    
+    <link rel="stylesheet" type="text/css" href="/static/css/tango.css"/>
     
 
     
@@ -40,7 +40,7 @@
       </hgroup>
       <nav>
         <ul>
-          <li><a href='/'>Blog</a></li>
+          <li><a href='/' class="active">Blog</a></li>
           <li><a href='/projects/'>Projects</a></li>
           <li><a href='/about/'>About</a></li>
         </ul>
@@ -51,33 +51,30 @@
     <div class="container">
       <div id="content">
         <section id="main_section">
-<h1>Archive</h1>
-<ul>
+<article>
+  <header><h1 class="entry-title">My Font for Gmail</h1>
+  <p>Posted on 26 Aug 2011 | <a class="dsq-comment-count" href="/2011/08/26/my-font-for-gmail.html#disqus_thread">Comments</a></p>
+  </header>
+  <div class="entry-content"><p>I have lots of plain text emails in Gmail. The format of those emails is always a problem: code and other nicely formated text are not aligned well because Gmail uses "arial,sans-serif" as the default font. I couldn't find a good solution to change it to a <a href="http://en.wikipedia.org/wiki/Monospaced_font">monospaced</a> one, so I decided to write my own Google Chrome extension: <a href="https://chrome.google.com/webstore/detail/olhcogoioikcdeceiakjbandbaifohik">My Font for Gmail</a>.</p>
 
-<li>12 Mar 2012 &raquo; <a href=/2012/03/12/install-nodejs-in-ubuntu-1004.html>Install node.js in Ubuntu 10.04</a></li>
+<p>This extension changes the default font of Gmail to any font you like. To use it:</p>
 
-<li>10 Mar 2012 &raquo; <a href=/2012/03/10/change-pdf-file-initial-view.html>Change PDF File Initial View</a></li>
+<ol>
+<li>Click the "wrench" icon on upper-right corner of Chrome,</li>
+<li>Select tools->Extensions->My Font for Gmail™->options.</li>
+<li>Choose a pre-defined font from the drop-down menu or enter any font in your system.</li>
+<li>Click "Save".</li>
+<li><em>Refresh</em> the Gmail page or re-open it.</li>
+</ol>
 
-<li>05 Feb 2012 &raquo; <a href=/2012/02/05/convert-mercurial-repository-into-git.html>Convert Mercurial Repository into Git</a></li>
 
-<li>03 Feb 2012 &raquo; <a href=/2012/02/03/change-default-editor-for-visudo-in-ubuntu.html>Change Default Editor for visudo in Ubuntu</a></li>
+<p>Please note that this extension works best for plain-text emails. Rich-text(HTML) emails will possibly remain its original font because those emails can set their own font for each element. Usually this doesn't bother me since they are already well-formatted.</p>
 
-<li>01 Feb 2012 &raquo; <a href=/2012/02/01/configure-cygwin-environment.html>Configure Cygwin Environment</a></li>
-
-<li>29 Jan 2012 &raquo; <a href=/2012/01/29/cant-draw-with-mouse-in-inkscape.html>Can't Draw in Inkscape 0.48</a></li>
-
-<li>26 Aug 2011 &raquo; <a href=/2011/08/26/my-font-for-gmail.html>My Font for Gmail</a></li>
-
-<li>19 Apr 2011 &raquo; <a href=/2011/04/19/install-faenza-in-ubuntu.html>Install Faenza in Ubuntu</a></li>
-
-<li>13 Apr 2011 &raquo; <a href=/2011/04/13/get-absolute-path-of-the-running-bash-script.html>Get Absolute Path of the Running Bash Script</a></li>
-
-<li>09 Apr 2011 &raquo; <a href=/2011/04/09/clone-a-ubuntu-virtual-machine-image.html>Clone a Ubuntu Virtual Machine Image</a></li>
-
-<li>04 Apr 2011 &raquo; <a href=/2011/04/04/pil-ioerror-decoder-jpeg-not-available.html>PIL IOError: decoder jpeg not available</a></li>
-
-</ul>
-
+<p>Source code is published at <a href="https://github.com/lancelotj/myfont4gmail">my git repository</a> under MIT license.</p>
+</div>
+</article>
+<p><a href="/archive.html">See All Posts</a></p>
+<div id="disqus_thread"></div>
 
 </section>
 <section id="sidebar" class="sub_section">
@@ -111,7 +108,7 @@
     window._gaq = [['_setAccount','UA-1637721-4'],['_trackPageview'],['_trackPageLoadTime']];
     Modernizr.load([
         {load: "http://"+ disqus_shortname + ".disqus.com/count.js"},
-        
+        {load: "http://" + disqus_shortname + ".disqus.com/embed.js"},
         {load: ("https:" == location.protocol ? "//ssl" : "//www") + ".google-analytics.com/ga.js"}
     ]);
   </script>

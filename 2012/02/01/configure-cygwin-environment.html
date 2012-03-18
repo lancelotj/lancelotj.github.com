@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     
     
-    <title>Archive | Lance Jian</title>
+    <title>Configure Cygwin Environment | Lance Jian</title>
     
     <meta name="author" content="Lance Jian"/>
 
@@ -23,7 +23,7 @@
     
     <link rel="stylesheet" type="text/css" href="/static/css/style.css"/>
     <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
-    
+    <link rel="stylesheet" type="text/css" href="/static/css/tango.css"/>
     
 
     
@@ -40,7 +40,7 @@
       </hgroup>
       <nav>
         <ul>
-          <li><a href='/'>Blog</a></li>
+          <li><a href='/' class="active">Blog</a></li>
           <li><a href='/projects/'>Projects</a></li>
           <li><a href='/about/'>About</a></li>
         </ul>
@@ -51,33 +51,22 @@
     <div class="container">
       <div id="content">
         <section id="main_section">
-<h1>Archive</h1>
-<ul>
+<article>
+  <header><h1 class="entry-title">Configure Cygwin Environment</h1>
+  <p>Posted on 01 Feb 2012 | <a class="dsq-comment-count" href="/2012/02/01/configure-cygwin-environment.html#disqus_thread">Comments</a></p>
+  </header>
+  <div class="entry-content"><p><a href="http://www.cygwin.com">Cygwin</a> is a windows program that simulates a Linux environment. The default installation uses <code>cmd.exe</code> as the terminal program which is not very convenient. For example,  it can only be resized up to 80 characters in width. Fortunately, there is an <code>rxvt</code> package in the Cygwin distribution. You only need to tweak some options to make it look like the terminal in Unix system.</p>
 
-<li>12 Mar 2012 &raquo; <a href=/2012/03/12/install-nodejs-in-ubuntu-1004.html>Install node.js in Ubuntu 10.04</a></li>
+<p>Right click "Start > Cygwin > rxvt-native" menu item, and select "Properties...", edit the "Target" field to:</p>
 
-<li>10 Mar 2012 &raquo; <a href=/2012/03/10/change-pdf-file-initial-view.html>Change PDF File Initial View</a></li>
+<pre><code>C:\path-to-cygwin\bin\rxvt.exe -display :0 -geometry 80x43 +sb -bg black -fg gray -fn "DejaVu Sans Mono-16" -tn rxvt-cygwin-native -e /bin/bash --login
+</code></pre>
 
-<li>05 Feb 2012 &raquo; <a href=/2012/02/05/convert-mercurial-repository-into-git.html>Convert Mercurial Repository into Git</a></li>
-
-<li>03 Feb 2012 &raquo; <a href=/2012/02/03/change-default-editor-for-visudo-in-ubuntu.html>Change Default Editor for visudo in Ubuntu</a></li>
-
-<li>01 Feb 2012 &raquo; <a href=/2012/02/01/configure-cygwin-environment.html>Configure Cygwin Environment</a></li>
-
-<li>29 Jan 2012 &raquo; <a href=/2012/01/29/cant-draw-with-mouse-in-inkscape.html>Can't Draw in Inkscape 0.48</a></li>
-
-<li>26 Aug 2011 &raquo; <a href=/2011/08/26/my-font-for-gmail.html>My Font for Gmail</a></li>
-
-<li>19 Apr 2011 &raquo; <a href=/2011/04/19/install-faenza-in-ubuntu.html>Install Faenza in Ubuntu</a></li>
-
-<li>13 Apr 2011 &raquo; <a href=/2011/04/13/get-absolute-path-of-the-running-bash-script.html>Get Absolute Path of the Running Bash Script</a></li>
-
-<li>09 Apr 2011 &raquo; <a href=/2011/04/09/clone-a-ubuntu-virtual-machine-image.html>Clone a Ubuntu Virtual Machine Image</a></li>
-
-<li>04 Apr 2011 &raquo; <a href=/2011/04/04/pil-ioerror-decoder-jpeg-not-available.html>PIL IOError: decoder jpeg not available</a></li>
-
-</ul>
-
+<p>You can change "<a href="http://dejavu-fonts.org">DejaVu Sans Mono</a>" font to the font name you prefer.</p>
+</div>
+</article>
+<p><a href="/archive.html">See All Posts</a></p>
+<div id="disqus_thread"></div>
 
 </section>
 <section id="sidebar" class="sub_section">
@@ -111,7 +100,7 @@
     window._gaq = [['_setAccount','UA-1637721-4'],['_trackPageview'],['_trackPageLoadTime']];
     Modernizr.load([
         {load: "http://"+ disqus_shortname + ".disqus.com/count.js"},
-        
+        {load: "http://" + disqus_shortname + ".disqus.com/embed.js"},
         {load: ("https:" == location.protocol ? "//ssl" : "//www") + ".google-analytics.com/ga.js"}
     ]);
   </script>
