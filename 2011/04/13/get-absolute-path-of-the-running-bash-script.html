@@ -62,38 +62,36 @@ folder.</p>
 
 <p>First, get the relative directory. There are two situations:</p>
 
-<ol>
-<li>If the script is supposed to be executed directly like <code>./script.sh</code>, get
-it with this code:</li>
-</ol>
-
+<p>1. If the script is supposed to be executed directly like <code>./script.sh</code>, use:</p>
 
 <div class="highlight"><pre><code class="bash"><span class="nv">relative_path</span><span class="o">=</span><span class="sb">`</span>dirname <span class="nv">$0</span><span class="sb">`</span>
 </code></pre>
 </div>
 
 
-<ol>
-<li><p>If the script is supposed to be "sourced" like <code>source script.sh</code>, get it
-with this:</p>
+<p>2. If the script is supposed to be "sourced" like <code>source script.sh</code>, use:</p>
 
-<pre><code>relative_path=`dirname $BASH_SOURCE`
-</code></pre></li>
-</ol>
+<div class="highlight"><pre><code class="bash"><span class="nv">relative_path</span><span class="o">=</span><span class="sb">`</span>dirname <span class="nv">$BASH_SOURCE</span><span class="sb">`</span>
+</code></pre>
+</div>
 
 
 <p>Once you have the relative path, it's easy to get the absolute path:</p>
 
-<pre><code>absolute_path=`cd $relative_path;pwd`
+<div class="highlight"><pre><code class="bash"><span class="nv">absolute_path</span><span class="o">=</span><span class="sb">`</span><span class="nb">cd</span> <span class="nv">$relative_path</span>;<span class="nb">pwd</span><span class="sb">`</span>
 </code></pre>
+</div>
+
 
 <p>This method is compatible with both Linux and Mac OS. However, it's not perfect.
 It won't work if you have changed the <code>cd</code> command to something else using alias
 or function. Although not usually happen, in this case, you can use the
 following way:</p>
 
-<pre><code>absolute_path=`readlink -m $relative_path`
+<div class="highlight"><pre><code class="bash"><span class="nv">absolute_path</span><span class="o">=</span><span class="sb">`</span>readlink -m <span class="nv">$relative_path</span><span class="sb">`</span>
 </code></pre>
+</div>
+
 
 <p>This command only works in Linux, so you have to pick the way suits you
 best. Now <code>$absolute_path</code> is the absolute path of the file being executed. You
@@ -101,7 +99,6 @@ can then use this variable to get other files which will be correct no matter
 the current working directory is.</p>
 </div>
 </article>
-<p><a href="/archive.html">See all posts »</a></p>
 <div id="disqus_thread"></div>
 </section>
 <section id="sidebar" class="sub_section">
