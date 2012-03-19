@@ -54,108 +54,73 @@
 <ul>
   
   <li><article>
-  <header><h1 class="entry-title"><a href="/2012/03/12/install-nodejs-in-ubuntu-1004.html" rel="bookmark" title="Permalink to this Post">Install node.js in Ubuntu 10.04</a></h1>
-  <p>Posted on 12 Mar 2012</p>
+  <header><h1 class="entry-title"><a href="/2011/04/09/clone-a-ubuntu-virtual-machine-image.html" rel="bookmark" title="Permalink to this Post">Clone a Ubuntu Virtual Machine Image</a></h1>
+  <p>Posted on 09 Apr 2011</p>
   </header>
   <div class="entry-content">
-    <p>Ubuntu 10.04 does not have a default node.js package. So if you want to use it, you need to install it manually:</p>
+    <p>I recently created a Ubuntu server virtual machine image and wanted to clone it so that I don't need to install everything from scratch again. It turned out this is fairly easy.</p>
 
-<pre><code>sudo aptitude install git-core curl build-essential openssl libssl-dev
-git clone https://github.com/joyent/node.git &amp;&amp; cd node &amp;&amp; git checkout v0.6.11
-./configure
-make
-sudo make install
-node -v
+<p>First,  copy the image file and create a new virtual machine from it. Next, start and log in the "new" machine.</p>
+
+<p>Now, remove <code>70-persistent-net.rules</code>, otherwise the network will not work:</p>
+
+<pre><code>sudo rm /etc/udev/rules.d/70-persistent-net.rules
 </code></pre>
 
-<p>"v0.6.11" is the current release version of node.js. If you are not sure, run <code>git tag</code> to check which versions are available.</p>
+<p>This file will be re-generated after a reboot.</p>
 
-<p>Up to this point, you are able to use the <code>node</code> command. You can then install <code>npm</code> which is a package manager of node.js its own:</p>
+<p>Next, change the hostname in <code>/etc/hostname</code> and /<code>etc/hosts</code> according to your preference.</p>
 
-<pre><code>curl http://npmjs.org/install.sh | sudo sh 
-</code></pre>
+<p>Finally, reboot and enjoy the new machine.</p>
 
-<p>After that, it's easy to install other node.js libraries. For example, to install <code>uglifyjs</code>, simply run:</p>
-
-<pre><code>sudo npm install uglify-js -g 
-</code></pre>
+<p>See also: <a href="http://koo.fi/tech/2010/11/28/cloning-ubuntu-1004-server-kvm-guests-efficiently/">Cloning Ubuntu 10.04 Server KVM guests efficiently</a></p>
 
   </div>
-  <p><a class="dsq-comment-count" href="/2012/03/12/install-nodejs-in-ubuntu-1004.html#disqus_thread">Comments</a></p>
+  <p><a class="dsq-comment-count" href="/2011/04/09/clone-a-ubuntu-virtual-machine-image.html#disqus_thread">Comments</a></p>
   </article></li>
   
   <li><article>
-  <header><h1 class="entry-title"><a href="/2012/03/10/change-pdf-file-initial-view.html" rel="bookmark" title="Permalink to this Post">Change PDF File Initial View</a></h1>
-  <p>Posted on 10 Mar 2012</p>
+  <header><h1 class="entry-title"><a href="/2011/04/04/pil-ioerror-decoder-jpeg-not-available.html" rel="bookmark" title="Permalink to this Post">PIL IOError: decoder jpeg not available</a></h1>
+  <p>Posted on 04 Apr 2011</p>
   </header>
   <div class="entry-content">
-    <p>When you open PDF files using Adobe Reader, it will read initial view settings such as single page or double page stored in the PDF file. It's actually pretty easy to change this information in Linux:</p>
+    <p>PIL IOError: decoder jpeg not available</p>
 
-<ol>
-<li>Install pdfedit: <code>sudo apt-get install pdfedit</code></li>
-<li>Open the PDF file in pdfedit, right click the "catalog" node in the tree panel, choose "add item to dictionary"</li>
-<li>Add property name: "PageLayout"</li>
-<li>Select "name" and input "TwoPageRight"</li>
-<li>Click "add and close"</li>
-<li>Save the PDF file</li>
-</ol>
+<p>Today I got this error when I try to resize a JPEG image in python using the Python Imaging Library (PIL):</p>
 
+<pre><code>File "/usr/local/lib/python2.6/dist-packages/PIL/Image.py", line 1290, in resize
+   self.load()
+File "/usr/local/lib/python2.6/dist-packages/PIL/ImageFile.py", line 189, in load
+   d = Image._getdecoder(self.mode, d, a, self.decoderconfig)
+File "/usr/local/lib/python2.6/dist-packages/PIL/Image.py", line 385, in _getdecoder
+   raise IOError("decoder %s not available" % decoder_name)
+IOError: decoder jpeg not available
+</code></pre>
 
-<p>This adds a name in the catalog dictionary of PDF file. It will be used by the Acrobat Reader. There are other possibilities:</p>
+<p>This is because when PIL was being compiled and installed, it did not find the JPEG library. To fix this problem, run:</p>
 
-<ul>
-<li>SinglePage</li>
-<li>OneColumn</li>
-<li>TwoColumnLeft</li>
-<li>TwoColumnRight</li>
-<li>TwoPageLeft</li>
-<li>TwoPageRight</li>
-</ul>
+<pre><code>sudo aptitude install libjpeg-dev
+</code></pre>
 
+<p>Then run the following commands to re-install the PIL library:</p>
 
-<p>"Column" means continuous page. "Page" means display as a single page. "Left" means start double pages  with odd-numbered pages on the left.</p>
+<pre><code>sudo rm -rf /usr/local/lib/python2.6/dist-packages/PIL
+sudo easy_install pil
+</code></pre>
 
-<p>Please note that not all PDF viewers support this setting.</p>
+<p>Check the PIL setup summary which is inside the output messages. It shows that it supports JPEG now:</p>
+
+<pre><code>PIL 1.1.7 SETUP SUMMARY
+-------------------------------
+...
+--- JPEG support available
+...
+</code></pre>
+
+<p>All the commands here works under Ubuntu 10.04.</p>
 
   </div>
-  <p><a class="dsq-comment-count" href="/2012/03/10/change-pdf-file-initial-view.html#disqus_thread">Comments</a></p>
-  </article></li>
-  
-  <li><article>
-  <header><h1 class="entry-title"><a href="/2012/02/05/convert-mercurial-repository-into-git.html" rel="bookmark" title="Permalink to this Post">Convert Mercurial Repository into Git</a></h1>
-  <p>Posted on 05 Feb 2012</p>
-  </header>
-  <div class="entry-content">
-    <p>I have some old mercurial repositories, and recently I want to convert them into
-git repositories. It turns out that converting them is pretty easy. First, you
-need to get <a href="http://repo.or.cz/w/fast-export.git">hg-fast-export</a>:</p>
-
-<pre><code>git clone git://repo.or.cz/fast-export.git
-</code></pre>
-
-<p>Next, create a new git repository:</p>
-
-<pre><code>mkdir new_git_repo
-cd new_git_repo
-git init
-</code></pre>
-
-<p>Finally, use the <code>hg-fast-export.sh</code> script from the directory you just checked
-out in the first step:</p>
-
-<pre><code>/path/to/hg-fast-export.sh -r /path/to/hg_repo
-git-repack -a -d -f
-git checkout BRANCH_NAME
-</code></pre>
-
-<p><code>BRANCH_NAME</code> is the name of mercurial branch, the "default" branch in mercurial
-will be called "master".</p>
-
-<p><code>hg-fast-export.sh</code> supports <code>--force</code> parameter, you can use it if you get
-validation errors.</p>
-
-  </div>
-  <p><a class="dsq-comment-count" href="/2012/02/05/convert-mercurial-repository-into-git.html#disqus_thread">Comments</a></p>
+  <p><a class="dsq-comment-count" href="/2011/04/04/pil-ioerror-decoder-jpeg-not-available.html#disqus_thread">Comments</a></p>
   </article></li>
   
 </ul>

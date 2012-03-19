@@ -54,108 +54,103 @@
 <ul>
   
   <li><article>
-  <header><h1 class="entry-title"><a href="/2012/03/12/install-nodejs-in-ubuntu-1004.html" rel="bookmark" title="Permalink to this Post">Install node.js in Ubuntu 10.04</a></h1>
-  <p>Posted on 12 Mar 2012</p>
+  <header><h1 class="entry-title"><a href="/2011/08/26/my-font-for-gmail.html" rel="bookmark" title="Permalink to this Post">My Font for Gmail</a></h1>
+  <p>Posted on 26 Aug 2011</p>
   </header>
   <div class="entry-content">
-    <p>Ubuntu 10.04 does not have a default node.js package. So if you want to use it, you need to install it manually:</p>
+    <p>I have lots of plain text emails in Gmail. The format of those emails is always a problem: code and other nicely formated text are not aligned well because Gmail uses "arial,sans-serif" as the default font. I couldn't find a good solution to change it to a <a href="http://en.wikipedia.org/wiki/Monospaced_font">monospaced</a> one, so I decided to write my own Google Chrome extension: <a href="https://chrome.google.com/webstore/detail/olhcogoioikcdeceiakjbandbaifohik">My Font for Gmail</a>.</p>
 
-<pre><code>sudo aptitude install git-core curl build-essential openssl libssl-dev
-git clone https://github.com/joyent/node.git &amp;&amp; cd node &amp;&amp; git checkout v0.6.11
-./configure
-make
-sudo make install
-node -v
-</code></pre>
-
-<p>"v0.6.11" is the current release version of node.js. If you are not sure, run <code>git tag</code> to check which versions are available.</p>
-
-<p>Up to this point, you are able to use the <code>node</code> command. You can then install <code>npm</code> which is a package manager of node.js its own:</p>
-
-<pre><code>curl http://npmjs.org/install.sh | sudo sh 
-</code></pre>
-
-<p>After that, it's easy to install other node.js libraries. For example, to install <code>uglifyjs</code>, simply run:</p>
-
-<pre><code>sudo npm install uglify-js -g 
-</code></pre>
-
-  </div>
-  <p><a class="dsq-comment-count" href="/2012/03/12/install-nodejs-in-ubuntu-1004.html#disqus_thread">Comments</a></p>
-  </article></li>
-  
-  <li><article>
-  <header><h1 class="entry-title"><a href="/2012/03/10/change-pdf-file-initial-view.html" rel="bookmark" title="Permalink to this Post">Change PDF File Initial View</a></h1>
-  <p>Posted on 10 Mar 2012</p>
-  </header>
-  <div class="entry-content">
-    <p>When you open PDF files using Adobe Reader, it will read initial view settings such as single page or double page stored in the PDF file. It's actually pretty easy to change this information in Linux:</p>
+<p>This extension changes the default font of Gmail to any font you like. To use it:</p>
 
 <ol>
-<li>Install pdfedit: <code>sudo apt-get install pdfedit</code></li>
-<li>Open the PDF file in pdfedit, right click the "catalog" node in the tree panel, choose "add item to dictionary"</li>
-<li>Add property name: "PageLayout"</li>
-<li>Select "name" and input "TwoPageRight"</li>
-<li>Click "add and close"</li>
-<li>Save the PDF file</li>
+<li>Click the "wrench" icon on upper-right corner of Chrome,</li>
+<li>Select tools->Extensions->My Font for Gmail™->options.</li>
+<li>Choose a pre-defined font from the drop-down menu or enter any font in your system.</li>
+<li>Click "Save".</li>
+<li><em>Refresh</em> the Gmail page or re-open it.</li>
 </ol>
 
 
-<p>This adds a name in the catalog dictionary of PDF file. It will be used by the Acrobat Reader. There are other possibilities:</p>
+<p>Please note that this extension works best for plain-text emails. Rich-text(HTML) emails will possibly remain its original font because those emails can set their own font for each element. Usually this doesn't bother me since they are already well-formatted.</p>
 
-<ul>
-<li>SinglePage</li>
-<li>OneColumn</li>
-<li>TwoColumnLeft</li>
-<li>TwoColumnRight</li>
-<li>TwoPageLeft</li>
-<li>TwoPageRight</li>
-</ul>
-
-
-<p>"Column" means continuous page. "Page" means display as a single page. "Left" means start double pages  with odd-numbered pages on the left.</p>
-
-<p>Please note that not all PDF viewers support this setting.</p>
+<p>Source code is published at <a href="https://github.com/lancelotj/myfont4gmail">my git repository</a> under MIT license.</p>
 
   </div>
-  <p><a class="dsq-comment-count" href="/2012/03/10/change-pdf-file-initial-view.html#disqus_thread">Comments</a></p>
+  <p><a class="dsq-comment-count" href="/2011/08/26/my-font-for-gmail.html#disqus_thread">Comments</a></p>
   </article></li>
   
   <li><article>
-  <header><h1 class="entry-title"><a href="/2012/02/05/convert-mercurial-repository-into-git.html" rel="bookmark" title="Permalink to this Post">Convert Mercurial Repository into Git</a></h1>
-  <p>Posted on 05 Feb 2012</p>
+  <header><h1 class="entry-title"><a href="/2011/04/19/install-faenza-in-ubuntu.html" rel="bookmark" title="Permalink to this Post">Install Faenza in Ubuntu</a></h1>
+  <p>Posted on 19 Apr 2011</p>
   </header>
   <div class="entry-content">
-    <p>I have some old mercurial repositories, and recently I want to convert them into
-git repositories. It turns out that converting them is pretty easy. First, you
-need to get <a href="http://repo.or.cz/w/fast-export.git">hg-fast-export</a>:</p>
+    <p><a href="http://fav.me/d2v6x24">Faenza Icons</a> is a very beautiful Gnome icon theme provided by Tiheum.</p>
 
-<pre><code>git clone git://repo.or.cz/fast-export.git
+<p><img src="http://th04.deviantart.net/fs70/150/i/2011/320/6/e/faenza_icons_by_tiheum-d2v6x24.png" alt="Faenza Icons" /></p>
+
+<p>It's very easy to install this theme in Ubuntu. Just run the following commands:</p>
+
+<pre><code>sudo add-apt-repository ppa:tiheum/equinox
+sudo aptitude update
+sudo aptitude install faenza-icon-theme
 </code></pre>
 
-<p>Next, create a new git repository:</p>
-
-<pre><code>mkdir new_git_repo
-cd new_git_repo
-git init
-</code></pre>
-
-<p>Finally, use the <code>hg-fast-export.sh</code> script from the directory you just checked
-out in the first step:</p>
-
-<pre><code>/path/to/hg-fast-export.sh -r /path/to/hg_repo
-git-repack -a -d -f
-git checkout BRANCH_NAME
-</code></pre>
-
-<p><code>BRANCH_NAME</code> is the name of mercurial branch, the "default" branch in mercurial
-will be called "master".</p>
-
-<p><code>hg-fast-export.sh</code> supports <code>--force</code> parameter, you can use it if you get
-validation errors.</p>
+<p>Next, go to System->Appearance->Customize...->Icons, choose "Faenza".</p>
 
   </div>
-  <p><a class="dsq-comment-count" href="/2012/02/05/convert-mercurial-repository-into-git.html#disqus_thread">Comments</a></p>
+  <p><a class="dsq-comment-count" href="/2011/04/19/install-faenza-in-ubuntu.html#disqus_thread">Comments</a></p>
+  </article></li>
+  
+  <li><article>
+  <header><h1 class="entry-title"><a href="/2011/04/13/get-absolute-path-of-the-running-bash-script.html" rel="bookmark" title="Permalink to this Post">Get Absolute Path of the Running Bash Script</a></h1>
+  <p>Posted on 13 Apr 2011</p>
+  </header>
+  <div class="entry-content">
+    <p>Sometimes you want to run a bash script from any directory, especially when this
+script is placed or linked in a common <code>$PATH</code> directory. So the script should
+know where itself is running so it can get the path of other files in the same
+folder.</p>
+
+<p>First, get the relative directory. There are two situations:</p>
+
+<p>1. If the script is supposed to be executed directly like <code>./script.sh</code>, use:</p>
+
+<div class="highlight"><pre><code class="bash"><span class="nv">relative_path</span><span class="o">=</span><span class="sb">`</span>dirname <span class="nv">$0</span><span class="sb">`</span>
+</code></pre>
+</div>
+
+
+<p>2. If the script is supposed to be "sourced" like <code>source script.sh</code>, use:</p>
+
+<div class="highlight"><pre><code class="bash"><span class="nv">relative_path</span><span class="o">=</span><span class="sb">`</span>dirname <span class="nv">$BASH_SOURCE</span><span class="sb">`</span>
+</code></pre>
+</div>
+
+
+<p>Once you have the relative path, it's easy to get the absolute path:</p>
+
+<div class="highlight"><pre><code class="bash"><span class="nv">absolute_path</span><span class="o">=</span><span class="sb">`</span><span class="nb">cd</span> <span class="nv">$relative_path</span>;<span class="nb">pwd</span><span class="sb">`</span>
+</code></pre>
+</div>
+
+
+<p>This method is compatible with both Linux and Mac OS. However, it's not perfect.
+It won't work if you have changed the <code>cd</code> command to something else using alias
+or function. Although not usually happen, in this case, you can use the
+following way:</p>
+
+<div class="highlight"><pre><code class="bash"><span class="nv">absolute_path</span><span class="o">=</span><span class="sb">`</span>readlink -m <span class="nv">$relative_path</span><span class="sb">`</span>
+</code></pre>
+</div>
+
+
+<p>This command only works in Linux, so you have to pick the way suits you
+best. Now <code>$absolute_path</code> is the absolute path of the file being executed. You
+can then use this variable to get other files which will be correct no matter
+the current working directory is.</p>
+
+  </div>
+  <p><a class="dsq-comment-count" href="/2011/04/13/get-absolute-path-of-the-running-bash-script.html#disqus_thread">Comments</a></p>
   </article></li>
   
 </ul>
