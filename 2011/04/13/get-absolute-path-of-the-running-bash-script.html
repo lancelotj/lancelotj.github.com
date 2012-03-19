@@ -21,15 +21,15 @@
 
     
     
-    <link rel="stylesheet" type="text/css" href="/static/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css"/>
     <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="/static/css/tango.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/solarized.css"/>
     
 
     
 
     
-    <script src="/static/js/libs/modernizr-2.0.6.min.js"></script>
+    <script src="/static/js/libs.js"></script>
   </head>
 
   <body>
@@ -63,15 +63,21 @@ folder.</p>
 <p>First, get the relative directory. There are two situations:</p>
 
 <ol>
-<li><p>If the script is supposed to be executed directly like <code>./script.sh</code>, get
-it with this code:</p>
+<li>If the script is supposed to be executed directly like <code>./script.sh</code>, get
+it with this code:</li>
+</ol>
 
-<pre><code> relative_path=`dirname $0`
-</code></pre></li>
+
+<div class="highlight"><pre><code class="bash"><span class="nv">relative_path</span><span class="o">=</span><span class="sb">`</span>dirname <span class="nv">$0</span><span class="sb">`</span>
+</code></pre>
+</div>
+
+
+<ol>
 <li><p>If the script is supposed to be "sourced" like <code>source script.sh</code>, get it
 with this:</p>
 
-<pre><code> relative_path=`dirname $BASH_SOURCE`
+<pre><code>relative_path=`dirname $BASH_SOURCE`
 </code></pre></li>
 </ol>
 
@@ -137,10 +143,9 @@ the current working directory is.</p>
   
 
   
-  
   <script src="http://www.google.com/jsapi" type="text/javascript"></script>
   
-  <script type="text/javascript" src="/static/js/script.js"></script>
+  <script type="text/javascript" src="/static/js/scripts.js"></script>
   
 	
   

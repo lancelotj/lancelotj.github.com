@@ -3,7 +3,7 @@
  <title>Lance Jian</title>
  <link href="http://www.lancejian.com/feed.xml" rel="self"/>
  <link href="http://www.lancejian.com"/>
- <updated>2012-03-18T15:38:28-07:00</updated>
+ <updated>2012-03-18T21:37:21-07:00</updated>
  <id>http://www.lancejian.com</id>
  <author>
    <name>Lance Jian</name>
@@ -216,15 +216,21 @@ folder.&lt;/p&gt;
 &lt;p&gt;First, get the relative directory. There are two situations:&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;If the script is supposed to be executed directly like &lt;code&gt;./script.sh&lt;/code&gt;, get
-it with this code:&lt;/p&gt;
+&lt;li&gt;If the script is supposed to be executed directly like &lt;code&gt;./script.sh&lt;/code&gt;, get
+it with this code:&lt;/li&gt;
+&lt;/ol&gt;
 
-&lt;pre&gt;&lt;code&gt; relative_path=`dirname $0`
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;relative_path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;dirname &lt;span class=&quot;nv&quot;&gt;$0&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;ol&gt;
 &lt;li&gt;&lt;p&gt;If the script is supposed to be &quot;sourced&quot; like &lt;code&gt;source script.sh&lt;/code&gt;, get it
 with this:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt; relative_path=`dirname $BASH_SOURCE`
+&lt;pre&gt;&lt;code&gt;relative_path=`dirname $BASH_SOURCE`
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
