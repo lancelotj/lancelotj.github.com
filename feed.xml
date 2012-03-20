@@ -3,7 +3,7 @@
  <title>Lance Jian</title>
  <link href="http://www.lancejian.com/feed.xml" rel="self"/>
  <link href="http://www.lancejian.com"/>
- <updated>2012-03-20T07:27:07-07:00</updated>
+ <updated>2012-03-20T07:40:00-07:00</updated>
  <id>http://www.lancejian.com</id>
  <author>
    <name>Lance Jian</name>
@@ -191,7 +191,7 @@ sudo aptitude install faenza-icon-theme&lt;/code&gt;&lt;/pre&gt;
    <link href="http://www.lancejian.com/2011/04/13/get-absolute-path-of-the-running-bash-script.html"/>
    <updated>2011-04-13T04:00:00Z</updated>
    <id>http://www.lancejian.com/2011/04/13/get-absolute-path-of-the-running-bash-script</id>
-   <content type="html">&lt;p&gt;Sometimes you want to run a bash script from any directory, especially when it is placed or linked in a directory in the &lt;code&gt;$PATH&lt;/code&gt; environment and depends on other files. The script should know where itself is running so it can grab the path of other files in the same folder.&lt;/p&gt;
+   <content type="html">&lt;p&gt;Sometimes you want to run a bash script from any directory, especially when it is placed or linked in a directory in the &lt;code&gt;$PATH&lt;/code&gt; environment and depends on other files in the same folder. The problem is: If you use a relative path for the other file, it will try to find the file in the current working directory. If you use an absolute path, you cannot move it later. So it should know where itself is runing in order to get the correct file path.&lt;/p&gt;
 
 &lt;p&gt;For the impatient, here is a script example that can run from anywhere to print the content of file &amp;#8220;help.txt&amp;#8221; under the script&amp;#8217;s directory:&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;&lt;span class='nv'&gt;relative_path&lt;/span&gt;&lt;span class='o'&gt;=&lt;/span&gt;&lt;span class='sb'&gt;`&lt;/span&gt;dirname &lt;span class='nv'&gt;$0&lt;/span&gt;&lt;span class='sb'&gt;`&lt;/span&gt;
