@@ -55,16 +55,14 @@
 <header><h1 class="entry-title">Get the Absolute Path of the Running Bash Script</h1>
 <p>Posted on 13 Apr 2011 | <a class="dsq-comment-count" href="/2011/04/13/get-absolute-path-of-the-running-bash-script.html#disqus_thread">Comments</a></p>
 </header>
-<div class="entry-content"><p>Sometimes you want to run a bash script from any directory, especially when this script is placed or linked in a common <code>$PATH</code> directory. So the script should know where itself is running so it can get the path of other files in the same folder.</p>
+<div class="entry-content"><p>Sometimes you want to run a bash script from any directory, especially when it is placed or linked in a directory in the <code>$PATH</code> environment and depends on other files. The script should know where itself is running so it can grab the path of other files in the same folder.</p>
 
-<p>For the impatient, here is a script example that can run anywhere to print the content of file &#8220;help.txt&#8221; under the script&#8217;s directory:</p>
+<p>For the impatient, here is a script example that can run from anywhere to print the content of file &#8220;help.txt&#8221; under the script&#8217;s directory:</p>
 <div class='highlight'><pre><code class='bash'><span class='nv'>relative_path</span><span class='o'>=</span><span class='sb'>`</span>dirname <span class='nv'>$0</span><span class='sb'>`</span>
 <span class='nv'>absolute_path</span><span class='o'>=</span><span class='sb'>`</span><span class='nb'>cd</span> <span class='nv'>$relative_path</span>;<span class='nb'>pwd</span><span class='sb'>`</span>
 cat <span class='s2'>&quot;$absolute_path/help.txt&quot;</span>
 </code></pre>
 </div>
-<p>Here is how it works:</p>
-
 <p>First, it gets the relative directory. There are two situations:</p>
 
 <ol>
@@ -85,11 +83,11 @@ cat <span class='s2'>&quot;$absolute_path/help.txt&quot;</span>
 <div class='highlight'><pre><code class='bash'><span class='nv'>absolute_path</span><span class='o'>=</span><span class='sb'>`</span><span class='nb'>cd</span> <span class='nv'>$relative_path</span>;<span class='nb'>pwd</span><span class='sb'>`</span>
 </code></pre>
 </div>
-<p>This method is compatible with both Linux and Mac OS. However, it&#8217;s not perfect. It won&#8217;t work if you have changed the <code>cd</code> command to something else using alias or function. Although not usually happen, in this case, you can use the other way:</p>
+<p>This method is compatible with both Linux and Mac OS. However, it&#8217;s not perfect. It won&#8217;t work if you have changed the <code>cd</code> command to something else using alias or function. Although it does not usually happen, in this case, you can use the other way:</p>
 <div class='highlight'><pre><code class='bash'><span class='nv'>absolute_path</span><span class='o'>=</span><span class='sb'>`</span>readlink -m <span class='nv'>$relative_path</span><span class='sb'>`</span>
 </code></pre>
 </div>
-<p>This command only works in Linux, so you have to pick the way suits you best. Now that <code>$absolute_path</code> is the absolute path of the file being executed. You can then use it to get other files which will be correct no matter the current working directory is.</p></div>
+<p>This command only works in Linux, so you have to pick the way suits you best. Now <code>$absolute_path</code> is the absolute path of the file being executed, so you can use it to get other files which will be correct no matter the current working directory is.</p></div>
 </article>
 <div id="disqus_thread"></div>
 </section>
