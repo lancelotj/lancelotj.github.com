@@ -3,7 +3,7 @@
  <title>Lance Jian</title>
  <link href="http://www.lancejian.com/feed.xml" rel="self"/>
  <link href="http://www.lancejian.com"/>
- <updated>2012-03-20T07:40:42-07:00</updated>
+ <updated>2012-03-20T08:14:31-07:00</updated>
  <id>http://www.lancejian.com</id>
  <author>
    <name>Lance Jian</name>
@@ -15,7 +15,7 @@
    <link href="http://www.lancejian.com/2012/03/12/install-nodejs-in-ubuntu-1004.html"/>
    <updated>2012-03-12T00:00:00-07:00</updated>
    <id>http://www.lancejian.com/2012/03/12/install-nodejs-in-ubuntu-1004</id>
-   <content type="html">&lt;p&gt;Ubuntu 10.04 does not have a default node.js package. So if you want to use it, you need to install it manually:&lt;/p&gt;
+   <content type="html">&lt;p&gt;Ubuntu 10.04 does not have a default &lt;a href='http://nodejs.org'&gt;node.js&lt;/a&gt; package. So if you want to use it, you need to install it manually:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;sudo aptitude install git-core curl build-essential openssl libssl-dev
 git clone https://github.com/joyent/node.git &amp;amp;&amp;amp; cd node &amp;amp;&amp;amp; git checkout v0.6.11
