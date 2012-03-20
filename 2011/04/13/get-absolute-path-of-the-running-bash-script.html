@@ -67,14 +67,20 @@ cat <span class='s2'>&quot;$absolute_path/help.txt&quot;</span>
 
 <p>First, it gets the relative directory. There are two situations:</p>
 
-<p>1. If the script is supposed to be executed directly like <code>./script.sh</code>, use:</p>
+<ol>
+<li>
+<p>If the script is supposed to be executed directly like <code>./script.sh</code>, use:</p>
 <div class='highlight'><pre><code class='bash'><span class='nv'>relative_path</span><span class='o'>=</span><span class='sb'>`</span>dirname <span class='nv'>$0</span><span class='sb'>`</span>
 </code></pre>
-</div>
-<p>2. If the script is supposed to be &#8220;sourced&#8221; like <code>source script.sh</code>, use:</p>
+</div></li>
+
+<li>
+<p>If the script is supposed to be &#8220;sourced&#8221; like <code>source script.sh</code>, use:</p>
 <div class='highlight'><pre><code class='bash'><span class='nv'>relative_path</span><span class='o'>=</span><span class='sb'>`</span>dirname <span class='nv'>$BASH_SOURCE</span><span class='sb'>`</span>
 </code></pre>
-</div>
+</div></li>
+</ol>
+
 <p>Once it has the relative path, it&#8217;s easy to get the absolute path:</p>
 <div class='highlight'><pre><code class='bash'><span class='nv'>absolute_path</span><span class='o'>=</span><span class='sb'>`</span><span class='nb'>cd</span> <span class='nv'>$relative_path</span>;<span class='nb'>pwd</span><span class='sb'>`</span>
 </code></pre>
