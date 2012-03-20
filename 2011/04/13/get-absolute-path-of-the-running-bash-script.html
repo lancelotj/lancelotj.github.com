@@ -55,7 +55,7 @@
 <header><h1 class="entry-title">Get the Absolute Path of the Running Bash Script</h1>
 <p>Posted on 13 Apr 2011 | <a class="dsq-comment-count" href="/2011/04/13/get-absolute-path-of-the-running-bash-script.html#disqus_thread">Comments</a></p>
 </header>
-<div class="entry-content"><p>Sometimes you want to run a bash script from any directory, especially when it is placed or linked in a directory in the <code>$PATH</code> environment and depends on other files in the same folder. The problem is: If you use a relative path for the other file, it will try to find the file in the current working directory. If you use an absolute path, you cannot move it later. So it should know where itself is runing in order to get the correct file path.</p>
+<div class="entry-content"><p>Sometimes you want to run a bash script from any directory, especially when it is placed or linked in a directory in the <code>$PATH</code> environment and depends on other files in the same folder. The problem is: If you use a relative path for the other file, it will try to find the file in the current working directory. If you use an absolute path, you cannot move it later. So it should know where itself is running in order to get the correct file path.</p>
 
 <p>For the impatient, here is a script example that can run from anywhere to print the content of file &#8220;help.txt&#8221; under the script&#8217;s directory:</p>
 <div class='highlight'><pre><code class='bash'><span class='nv'>relative_path</span><span class='o'>=</span><span class='sb'>`</span>dirname <span class='nv'>$0</span><span class='sb'>`</span>
