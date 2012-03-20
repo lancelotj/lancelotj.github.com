@@ -3,7 +3,7 @@
  <title>Lance Jian</title>
  <link href="http://www.lancejian.com/feed.xml" rel="self"/>
  <link href="http://www.lancejian.com"/>
- <updated>2012-03-19T07:29:19-07:00</updated>
+ <updated>2012-03-19T21:55:27-07:00</updated>
  <id>http://www.lancejian.com</id>
  <author>
    <name>Lance Jian</name>
@@ -204,7 +204,7 @@ sudo aptitude install faenza-icon-theme
  </entry>
  
  <entry>
-   <title>Get Absolute Path of the Running Bash Script</title>
+   <title>Get the Absolute Path of the Running Bash Script</title>
    <link href="http://www.lancejian.com/2011/04/13/get-absolute-path-of-the-running-bash-script.html"/>
    <updated>2011-04-13T04:00:00Z</updated>
    <id>http://www.lancejian.com/2011/04/13/get-absolute-path-of-the-running-bash-script</id>
@@ -213,7 +213,19 @@ script is placed or linked in a common &lt;code&gt;$PATH&lt;/code&gt; directory.
 know where itself is running so it can get the path of other files in the same
 folder.&lt;/p&gt;
 
-&lt;p&gt;First, get the relative directory. There are two situations:&lt;/p&gt;
+&lt;p&gt;For the impatient, here is a script example that can run anywhere to print the
+content of file &quot;help.txt&quot; under the script's directory:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;relative_path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;dirname &lt;span class=&quot;nv&quot;&gt;$0&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;absolute_path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$relative_path&lt;/span&gt;;&lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
+cat &lt;span class=&quot;s2&quot;&gt;&amp;quot;$absolute_path/help.txt&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;Here is how it works:&lt;/p&gt;
+
+&lt;p&gt;First, it gets the relative directory. There are two situations:&lt;/p&gt;
 
 &lt;p&gt;1. If the script is supposed to be executed directly like &lt;code&gt;./script.sh&lt;/code&gt;, use:&lt;/p&gt;
 
@@ -229,7 +241,7 @@ folder.&lt;/p&gt;
 &lt;/div&gt;
 
 
-&lt;p&gt;Once you have the relative path, it's easy to get the absolute path:&lt;/p&gt;
+&lt;p&gt;Once it has the relative path, it's easy to get the absolute path:&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;absolute_path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$relative_path&lt;/span&gt;;&lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
@@ -239,7 +251,7 @@ folder.&lt;/p&gt;
 &lt;p&gt;This method is compatible with both Linux and Mac OS. However, it's not perfect.
 It won't work if you have changed the &lt;code&gt;cd&lt;/code&gt; command to something else using alias
 or function. Although not usually happen, in this case, you can use the
-following way:&lt;/p&gt;
+other way:&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;absolute_path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;readlink -m &lt;span class=&quot;nv&quot;&gt;$relative_path&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
@@ -247,8 +259,8 @@ following way:&lt;/p&gt;
 
 
 &lt;p&gt;This command only works in Linux, so you have to pick the way suits you
-best. Now &lt;code&gt;$absolute_path&lt;/code&gt; is the absolute path of the file being executed. You
-can then use this variable to get other files which will be correct no matter
+best. Now that &lt;code&gt;$absolute_path&lt;/code&gt; is the absolute path of the file being executed. You
+can then use it to get other files which will be correct no matter
 the current working directory is.&lt;/p&gt;
 </content>
  </entry>
