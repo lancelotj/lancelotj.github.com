@@ -58,15 +58,13 @@
   <p>Posted on 03 Feb 2012</p>
   </header>
   <div class="entry-content">
-    <p>Ubuntu and Debian use the alternatives system to maintain the symbolic links for programs. When you first run <code>visudo</code>, it will prompt a list of editors for you to choose from. Unfortunately, it doesn't tell you how to change that setting again. The mostly happend situation is: you set it to "nano" at first, and can't change it to "vi" at a later time.</p>
+    <p>Ubuntu and Debian use the alternatives system to maintain the symbolic links for programs. When you first run <code>visudo</code>, it will prompt a list of editors for you to choose from. Unfortunately, it doesn&#8217;t tell you how to change that setting again. The mostly happend situation is: you set it to &#8220;nano&#8221; at first, and can&#8217;t change it to &#8220;vi&#8221; at a later time.</p>
 
 <p>Here is the command to bring up that list again:</p>
 
-<pre><code>sudo update-alternatives --config editor
-</code></pre>
+<pre><code>sudo update-alternatives --config editor</code></pre>
 
-<p>Some people suggest using command <code>EDITOR=vi visudo</code>, or <code>export EDITOR=vi; visudo</code>, but it's really annoying if you have to remember and type so many letters everytime you run this command.</p>
-
+<p>Some people suggest using command <code>EDITOR=vi visudo</code>, or <code>export EDITOR=vi; visudo</code>, but it&#8217;s really annoying if you have to remember and type so many letters everytime you run this command.</p>
   </div>
   <p><a class="dsq-comment-count" href="/2012/02/03/change-default-editor-for-visudo-in-ubuntu.html#disqus_thread">Comments</a></p>
   </article></li>
@@ -76,15 +74,13 @@
   <p>Posted on 01 Feb 2012</p>
   </header>
   <div class="entry-content">
-    <p><a href="http://www.cygwin.com">Cygwin</a> is a windows program that simulates a Linux environment. The default installation uses <code>cmd.exe</code> as the terminal program which is not very convenient. For example,  it can only be resized up to 80 characters in width. Fortunately, there is an <code>rxvt</code> package in the Cygwin distribution. You only need to tweak some options to make it look like the terminal in Unix system.</p>
+    <p><a href='http://www.cygwin.com'>Cygwin</a> is a windows program that simulates a Linux environment. The default installation uses <code>cmd.exe</code> as the terminal program which is not very convenient. For example, it can only be resized up to 80 characters in width. Fortunately, there is an <code>rxvt</code> package in the Cygwin distribution. You only need to tweak some options to make it look like the terminal in Unix system.</p>
 
-<p>Right click "Start > Cygwin > rxvt-native" menu item, and select "Properties...", edit the "Target" field to:</p>
+<p>Right click &#8220;Start &gt; Cygwin &gt; rxvt-native&#8221; menu item, and select &#8220;Properties&#8230;&#8221;, edit the &#8220;Target&#8221; field to:</p>
 
-<pre><code>C:\path-to-cygwin\bin\rxvt.exe -display :0 -geometry 80x43 +sb -bg black -fg gray -fn "DejaVu Sans Mono-16" -tn rxvt-cygwin-native -e /bin/bash --login
-</code></pre>
+<pre><code>C:\path-to-cygwin\bin\rxvt.exe -display :0 -geometry 80x43 +sb -bg black -fg gray -fn &quot;DejaVu Sans Mono-16&quot; -tn rxvt-cygwin-native -e /bin/bash --login</code></pre>
 
-<p>You can change "<a href="http://dejavu-fonts.org">DejaVu Sans Mono</a>" font to the font name you prefer.</p>
-
+<p>You can change &#8221;<a href='http://dejavu-fonts.org'>DejaVu Sans Mono</a>&#8221; font to the font name you prefer.</p>
   </div>
   <p><a class="dsq-comment-count" href="/2012/02/01/configure-cygwin-environment.html#disqus_thread">Comments</a></p>
   </article></li>
@@ -94,17 +90,10 @@
   <p>Posted on 29 Jan 2012</p>
   </header>
   <div class="entry-content">
-    <p>Sometimes big problems come from small mistakes. One day I found I can't draw
-anything in <a href="http://inkscape.org">Inkscape</a>(version 0.48) with my mouse(I'm
-using it under Mac OS).</p>
+    <p>Sometimes big problems come from small mistakes. One day I found I can&#8217;t draw anything in <a href='http://inkscape.org'>Inkscape</a>(version 0.48) with my mouse(I&#8217;m using it under Mac OS).</p>
 
-<p>To solve this problem, I reinstalled Inkscape several times, even re-compiled
-it from source code, but nothing happened. Finally I recalled that I had
-connected a graphics tablet to the machine several days ago. So I checked the
-device settings. It turned out that I didn't set it correctly: In <code>File-&gt;input
-devices-&gt;Configuration</code>, I have <code>pen</code>, <code>cursor</code> and <code>eraser</code> selected. Once I
-unchecked those three options, everything went fine.</p>
-
+<p>To solve this problem, I reinstalled Inkscape several times, even re-compiled it from source code, but nothing happened. Finally I recalled that I had connected a graphics tablet to the machine several days ago. So I checked the device settings. It turned out that I didn&#8217;t set it correctly: In <code>File-&gt;input
+devices-&gt;Configuration</code>, I have <code>pen</code>, <code>cursor</code> and <code>eraser</code> selected. Once I unchecked those three options, everything went fine.</p>
   </div>
   <p><a class="dsq-comment-count" href="/2012/01/29/cant-draw-with-mouse-in-inkscape.html#disqus_thread">Comments</a></p>
   </article></li>

@@ -55,34 +55,41 @@
 <header><h1 class="entry-title">Change PDF File Initial View</h1>
 <p>Posted on 10 Mar 2012 | <a class="dsq-comment-count" href="/2012/03/10/change-pdf-file-initial-view.html#disqus_thread">Comments</a></p>
 </header>
-<div class="entry-content"><p>When you open PDF files using Adobe Reader, it will read initial view settings such as single page or double page stored in the PDF file. It's actually pretty easy to change this information in Linux:</p>
+<div class="entry-content"><p>When you open PDF files using Adobe Reader, it will read initial view settings such as single page or double page stored in the PDF file. It&#8217;s actually pretty easy to change this information in Linux:</p>
 
 <ol>
 <li>Install pdfedit: <code>sudo apt-get install pdfedit</code></li>
-<li>Open the PDF file in pdfedit, right click the "catalog" node in the tree panel, choose "add item to dictionary"</li>
-<li>Add property name: "PageLayout"</li>
-<li>Select "name" and input "TwoPageRight"</li>
-<li>Click "add and close"</li>
+
+<li>Open the PDF file in pdfedit, right click the &#8220;catalog&#8221; node in the tree panel, choose &#8220;add item to dictionary&#8221;</li>
+
+<li>Add property name: &#8220;PageLayout&#8221;</li>
+
+<li>Select &#8220;name&#8221; and input &#8220;TwoPageRight&#8221;</li>
+
+<li>Click &#8220;add and close&#8221;</li>
+
 <li>Save the PDF file</li>
 </ol>
-
 
 <p>This adds a name in the catalog dictionary of PDF file. It will be used by the Acrobat Reader. There are other possibilities:</p>
 
 <ul>
 <li>SinglePage</li>
+
 <li>OneColumn</li>
+
 <li>TwoColumnLeft</li>
+
 <li>TwoColumnRight</li>
+
 <li>TwoPageLeft</li>
+
 <li>TwoPageRight</li>
 </ul>
 
+<p>&#8220;Column&#8221; means continuous page. &#8220;Page&#8221; means display as a single page. &#8220;Left&#8221; means start double pages with odd-numbered pages on the left.</p>
 
-<p>"Column" means continuous page. "Page" means display as a single page. "Left" means start double pages  with odd-numbered pages on the left.</p>
-
-<p>Please note that not all PDF viewers support this setting.</p>
-</div>
+<p>Please note that not all PDF viewers support this setting.</p></div>
 </article>
 <div id="disqus_thread"></div>
 </section>

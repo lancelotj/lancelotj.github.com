@@ -55,29 +55,24 @@
 <header><h1 class="entry-title">PIL IOError: decoder jpeg not available</h1>
 <p>Posted on 04 Apr 2011 | <a class="dsq-comment-count" href="/2011/04/04/pil-ioerror-decoder-jpeg-not-available.html#disqus_thread">Comments</a></p>
 </header>
-<div class="entry-content"><p>PIL IOError: decoder jpeg not available</p>
+<div class="entry-content"><p>Today I got this error when I try to resize a JPEG image in python using the Python Imaging Library (PIL):</p>
 
-<p>Today I got this error when I try to resize a JPEG image in python using the Python Imaging Library (PIL):</p>
-
-<pre><code>File "/usr/local/lib/python2.6/dist-packages/PIL/Image.py", line 1290, in resize
+<pre><code>File &quot;/usr/local/lib/python2.6/dist-packages/PIL/Image.py&quot;, line 1290, in resize
    self.load()
-File "/usr/local/lib/python2.6/dist-packages/PIL/ImageFile.py", line 189, in load
+File &quot;/usr/local/lib/python2.6/dist-packages/PIL/ImageFile.py&quot;, line 189, in load
    d = Image._getdecoder(self.mode, d, a, self.decoderconfig)
-File "/usr/local/lib/python2.6/dist-packages/PIL/Image.py", line 385, in _getdecoder
-   raise IOError("decoder %s not available" % decoder_name)
-IOError: decoder jpeg not available
-</code></pre>
+File &quot;/usr/local/lib/python2.6/dist-packages/PIL/Image.py&quot;, line 385, in _getdecoder
+   raise IOError(&quot;decoder %s not available&quot; % decoder_name)
+IOError: decoder jpeg not available</code></pre>
 
 <p>This is because when PIL was being compiled and installed, it did not find the JPEG library. To fix this problem, run:</p>
 
-<pre><code>sudo aptitude install libjpeg-dev
-</code></pre>
+<pre><code>sudo aptitude install libjpeg-dev</code></pre>
 
 <p>Then run the following commands to re-install the PIL library:</p>
 
 <pre><code>sudo rm -rf /usr/local/lib/python2.6/dist-packages/PIL
-sudo easy_install pil
-</code></pre>
+sudo easy_install pil</code></pre>
 
 <p>Check the PIL setup summary which is inside the output messages. It shows that it supports JPEG now:</p>
 
@@ -85,11 +80,9 @@ sudo easy_install pil
 -------------------------------
 ...
 --- JPEG support available
-...
-</code></pre>
+...</code></pre>
 
-<p>All the commands here works under Ubuntu 10.04.</p>
-</div>
+<p>All the commands here works under Ubuntu 10.04.</p></div>
 </article>
 <div id="disqus_thread"></div>
 </section>

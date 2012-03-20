@@ -58,14 +58,13 @@
   <p>Posted on 09 Apr 2011</p>
   </header>
   <div class="entry-content">
-    <p>I recently created a Ubuntu server virtual machine image and wanted to clone it so that I don't need to install everything from scratch again. It turned out this is fairly easy.</p>
+    <p>I recently created a Ubuntu server virtual machine image and wanted to clone it so that I don&#8217;t need to install everything from scratch again. It turned out this is fairly easy.</p>
 
-<p>First,  copy the image file and create a new virtual machine from it. Next, start and log in the "new" machine.</p>
+<p>First, copy the image file and create a new virtual machine from it. Next, start and log in the &#8220;new&#8221; machine.</p>
 
 <p>Now, remove <code>70-persistent-net.rules</code>, otherwise the network will not work:</p>
 
-<pre><code>sudo rm /etc/udev/rules.d/70-persistent-net.rules
-</code></pre>
+<pre><code>sudo rm /etc/udev/rules.d/70-persistent-net.rules</code></pre>
 
 <p>This file will be re-generated after a reboot.</p>
 
@@ -73,8 +72,7 @@
 
 <p>Finally, reboot and enjoy the new machine.</p>
 
-<p>See also: <a href="http://koo.fi/tech/2010/11/28/cloning-ubuntu-1004-server-kvm-guests-efficiently/">Cloning Ubuntu 10.04 Server KVM guests efficiently</a></p>
-
+<p>See also: <a href='http://koo.fi/tech/2010/11/28/cloning-ubuntu-1004-server-kvm-guests-efficiently/'>Cloning Ubuntu 10.04 Server KVM guests efficiently</a></p>
   </div>
   <p><a class="dsq-comment-count" href="/2011/04/09/clone-a-ubuntu-virtual-machine-image.html#disqus_thread">Comments</a></p>
   </article></li>
@@ -84,29 +82,24 @@
   <p>Posted on 04 Apr 2011</p>
   </header>
   <div class="entry-content">
-    <p>PIL IOError: decoder jpeg not available</p>
+    <p>Today I got this error when I try to resize a JPEG image in python using the Python Imaging Library (PIL):</p>
 
-<p>Today I got this error when I try to resize a JPEG image in python using the Python Imaging Library (PIL):</p>
-
-<pre><code>File "/usr/local/lib/python2.6/dist-packages/PIL/Image.py", line 1290, in resize
+<pre><code>File &quot;/usr/local/lib/python2.6/dist-packages/PIL/Image.py&quot;, line 1290, in resize
    self.load()
-File "/usr/local/lib/python2.6/dist-packages/PIL/ImageFile.py", line 189, in load
+File &quot;/usr/local/lib/python2.6/dist-packages/PIL/ImageFile.py&quot;, line 189, in load
    d = Image._getdecoder(self.mode, d, a, self.decoderconfig)
-File "/usr/local/lib/python2.6/dist-packages/PIL/Image.py", line 385, in _getdecoder
-   raise IOError("decoder %s not available" % decoder_name)
-IOError: decoder jpeg not available
-</code></pre>
+File &quot;/usr/local/lib/python2.6/dist-packages/PIL/Image.py&quot;, line 385, in _getdecoder
+   raise IOError(&quot;decoder %s not available&quot; % decoder_name)
+IOError: decoder jpeg not available</code></pre>
 
 <p>This is because when PIL was being compiled and installed, it did not find the JPEG library. To fix this problem, run:</p>
 
-<pre><code>sudo aptitude install libjpeg-dev
-</code></pre>
+<pre><code>sudo aptitude install libjpeg-dev</code></pre>
 
 <p>Then run the following commands to re-install the PIL library:</p>
 
 <pre><code>sudo rm -rf /usr/local/lib/python2.6/dist-packages/PIL
-sudo easy_install pil
-</code></pre>
+sudo easy_install pil</code></pre>
 
 <p>Check the PIL setup summary which is inside the output messages. It shows that it supports JPEG now:</p>
 
@@ -114,11 +107,9 @@ sudo easy_install pil
 -------------------------------
 ...
 --- JPEG support available
-...
-</code></pre>
+...</code></pre>
 
 <p>All the commands here works under Ubuntu 10.04.</p>
-
   </div>
   <p><a class="dsq-comment-count" href="/2011/04/04/pil-ioerror-decoder-jpeg-not-available.html#disqus_thread">Comments</a></p>
   </article></li>

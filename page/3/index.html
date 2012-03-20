@@ -58,23 +58,25 @@
   <p>Posted on 26 Aug 2011</p>
   </header>
   <div class="entry-content">
-    <p>I have lots of plain text emails in Gmail. The format of those emails is always a problem: code and other nicely formated text are not aligned well because Gmail uses "arial,sans-serif" as the default font. I couldn't find a good solution to change it to a <a href="http://en.wikipedia.org/wiki/Monospaced_font">monospaced</a> one, so I decided to write my own Google Chrome extension: <a href="https://chrome.google.com/webstore/detail/olhcogoioikcdeceiakjbandbaifohik">My Font for Gmail</a>.</p>
+    <p>I have lots of plain text emails in Gmail. The format of those emails is always a problem: code and other nicely formated text are not aligned well because Gmail uses &#8220;arial,sans-serif&#8221; as the default font. I couldn&#8217;t find a good solution to change it to a <a href='http://en.wikipedia.org/wiki/Monospaced_font'>monospaced</a> one, so I decided to write my own Google Chrome extension: <a href='https://chrome.google.com/webstore/detail/olhcogoioikcdeceiakjbandbaifohik'>My Font for Gmail</a>.</p>
 
 <p>This extension changes the default font of Gmail to any font you like. To use it:</p>
 
 <ol>
-<li>Click the "wrench" icon on upper-right corner of Chrome,</li>
-<li>Select tools->Extensions->My Font for Gmail™->options.</li>
+<li>Click the &#8220;wrench&#8221; icon on upper-right corner of Chrome,</li>
+
+<li>Select tools-&gt;Extensions-&gt;My Font for Gmail™-&gt;options.</li>
+
 <li>Choose a pre-defined font from the drop-down menu or enter any font in your system.</li>
-<li>Click "Save".</li>
+
+<li>Click &#8220;Save&#8221;.</li>
+
 <li><em>Refresh</em> the Gmail page or re-open it.</li>
 </ol>
 
+<p>Please note that this extension works best for plain-text emails. Rich-text(HTML) emails will possibly remain its original font because those emails can set their own font for each element. Usually this doesn&#8217;t bother me since they are already well-formatted.</p>
 
-<p>Please note that this extension works best for plain-text emails. Rich-text(HTML) emails will possibly remain its original font because those emails can set their own font for each element. Usually this doesn't bother me since they are already well-formatted.</p>
-
-<p>Source code is published at <a href="https://github.com/lancelotj/myfont4gmail">my git repository</a> under MIT license.</p>
-
+<p>Source code is published at <a href='https://github.com/lancelotj/myfont4gmail'>my git repository</a> under MIT license.</p>
   </div>
   <p><a class="dsq-comment-count" href="/2011/08/26/my-font-for-gmail.html#disqus_thread">Comments</a></p>
   </article></li>
@@ -84,19 +86,17 @@
   <p>Posted on 19 Apr 2011</p>
   </header>
   <div class="entry-content">
-    <p><a href="http://fav.me/d2v6x24">Faenza Icons</a> is a very beautiful Gnome icon theme provided by Tiheum.</p>
+    <p><a href='http://fav.me/d2v6x24'>Faenza Icons</a> is a very beautiful Gnome icon theme provided by Tiheum.</p>
 
-<p><img src="http://th04.deviantart.net/fs70/150/i/2011/320/6/e/faenza_icons_by_tiheum-d2v6x24.png" alt="Faenza Icons" /></p>
+<p><img src='http://th04.deviantart.net/fs70/150/i/2011/320/6/e/faenza_icons_by_tiheum-d2v6x24.png' alt='Faenza Icons' /></p>
 
-<p>It's very easy to install this theme in Ubuntu. Just run the following commands:</p>
+<p>It&#8217;s very easy to install this theme in Ubuntu. Just run the following commands:</p>
 
 <pre><code>sudo add-apt-repository ppa:tiheum/equinox
 sudo aptitude update
-sudo aptitude install faenza-icon-theme
-</code></pre>
+sudo aptitude install faenza-icon-theme</code></pre>
 
-<p>Next, go to System->Appearance->Customize...->Icons, choose "Faenza".</p>
-
+<p>Next, go to System-&gt;Appearance-&gt;Customize&#8230;-&gt;Icons, choose &#8220;Faenza&#8221;.</p>
   </div>
   <p><a class="dsq-comment-count" href="/2011/04/19/install-faenza-in-ubuntu.html#disqus_thread">Comments</a></p>
   </article></li>
@@ -106,61 +106,35 @@ sudo aptitude install faenza-icon-theme
   <p>Posted on 13 Apr 2011</p>
   </header>
   <div class="entry-content">
-    <p>Sometimes you want to run a bash script from any directory, especially when this
-script is placed or linked in a common <code>$PATH</code> directory. So the script should
-know where itself is running so it can get the path of other files in the same
-folder.</p>
+    <p>Sometimes you want to run a bash script from any directory, especially when this script is placed or linked in a common <code>$PATH</code> directory. So the script should know where itself is running so it can get the path of other files in the same folder.</p>
 
-<p>For the impatient, here is a script example that can run anywhere to print the
-content of file "help.txt" under the script's directory:</p>
-
-<div class="highlight"><pre><code class="bash"><span class="nv">relative_path</span><span class="o">=</span><span class="sb">`</span>dirname <span class="nv">$0</span><span class="sb">`</span>
-<span class="nv">absolute_path</span><span class="o">=</span><span class="sb">`</span><span class="nb">cd</span> <span class="nv">$relative_path</span>;<span class="nb">pwd</span><span class="sb">`</span>
-cat <span class="s2">&quot;$absolute_path/help.txt&quot;</span>
+<p>For the impatient, here is a script example that can run anywhere to print the content of file &#8220;help.txt&#8221; under the script&#8217;s directory:</p>
+<div class='highlight'><pre><code class='bash'><span class='nv'>relative_path</span><span class='o'>=</span><span class='sb'>`</span>dirname <span class='nv'>$0</span><span class='sb'>`</span>
+<span class='nv'>absolute_path</span><span class='o'>=</span><span class='sb'>`</span><span class='nb'>cd</span> <span class='nv'>$relative_path</span>;<span class='nb'>pwd</span><span class='sb'>`</span>
+cat <span class='s2'>&quot;$absolute_path/help.txt&quot;</span>
 </code></pre>
 </div>
-
-
 <p>Here is how it works:</p>
 
 <p>First, it gets the relative directory. There are two situations:</p>
 
 <p>1. If the script is supposed to be executed directly like <code>./script.sh</code>, use:</p>
-
-<div class="highlight"><pre><code class="bash"><span class="nv">relative_path</span><span class="o">=</span><span class="sb">`</span>dirname <span class="nv">$0</span><span class="sb">`</span>
+<div class='highlight'><pre><code class='bash'><span class='nv'>relative_path</span><span class='o'>=</span><span class='sb'>`</span>dirname <span class='nv'>$0</span><span class='sb'>`</span>
 </code></pre>
 </div>
-
-
-<p>2. If the script is supposed to be "sourced" like <code>source script.sh</code>, use:</p>
-
-<div class="highlight"><pre><code class="bash"><span class="nv">relative_path</span><span class="o">=</span><span class="sb">`</span>dirname <span class="nv">$BASH_SOURCE</span><span class="sb">`</span>
+<p>2. If the script is supposed to be &#8220;sourced&#8221; like <code>source script.sh</code>, use:</p>
+<div class='highlight'><pre><code class='bash'><span class='nv'>relative_path</span><span class='o'>=</span><span class='sb'>`</span>dirname <span class='nv'>$BASH_SOURCE</span><span class='sb'>`</span>
 </code></pre>
 </div>
-
-
-<p>Once it has the relative path, it's easy to get the absolute path:</p>
-
-<div class="highlight"><pre><code class="bash"><span class="nv">absolute_path</span><span class="o">=</span><span class="sb">`</span><span class="nb">cd</span> <span class="nv">$relative_path</span>;<span class="nb">pwd</span><span class="sb">`</span>
+<p>Once it has the relative path, it&#8217;s easy to get the absolute path:</p>
+<div class='highlight'><pre><code class='bash'><span class='nv'>absolute_path</span><span class='o'>=</span><span class='sb'>`</span><span class='nb'>cd</span> <span class='nv'>$relative_path</span>;<span class='nb'>pwd</span><span class='sb'>`</span>
 </code></pre>
 </div>
-
-
-<p>This method is compatible with both Linux and Mac OS. However, it's not perfect.
-It won't work if you have changed the <code>cd</code> command to something else using alias
-or function. Although not usually happen, in this case, you can use the
-other way:</p>
-
-<div class="highlight"><pre><code class="bash"><span class="nv">absolute_path</span><span class="o">=</span><span class="sb">`</span>readlink -m <span class="nv">$relative_path</span><span class="sb">`</span>
+<p>This method is compatible with both Linux and Mac OS. However, it&#8217;s not perfect. It won&#8217;t work if you have changed the <code>cd</code> command to something else using alias or function. Although not usually happen, in this case, you can use the other way:</p>
+<div class='highlight'><pre><code class='bash'><span class='nv'>absolute_path</span><span class='o'>=</span><span class='sb'>`</span>readlink -m <span class='nv'>$relative_path</span><span class='sb'>`</span>
 </code></pre>
 </div>
-
-
-<p>This command only works in Linux, so you have to pick the way suits you
-best. Now that <code>$absolute_path</code> is the absolute path of the file being executed. You
-can then use it to get other files which will be correct no matter
-the current working directory is.</p>
-
+<p>This command only works in Linux, so you have to pick the way suits you best. Now that <code>$absolute_path</code> is the absolute path of the file being executed. You can then use it to get other files which will be correct no matter the current working directory is.</p>
   </div>
   <p><a class="dsq-comment-count" href="/2011/04/13/get-absolute-path-of-the-running-bash-script.html#disqus_thread">Comments</a></p>
   </article></li>

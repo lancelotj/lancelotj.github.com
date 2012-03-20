@@ -55,15 +55,13 @@
 <header><h1 class="entry-title">Configure Cygwin Environment</h1>
 <p>Posted on 01 Feb 2012 | <a class="dsq-comment-count" href="/2012/02/01/configure-cygwin-environment.html#disqus_thread">Comments</a></p>
 </header>
-<div class="entry-content"><p><a href="http://www.cygwin.com">Cygwin</a> is a windows program that simulates a Linux environment. The default installation uses <code>cmd.exe</code> as the terminal program which is not very convenient. For example,  it can only be resized up to 80 characters in width. Fortunately, there is an <code>rxvt</code> package in the Cygwin distribution. You only need to tweak some options to make it look like the terminal in Unix system.</p>
+<div class="entry-content"><p><a href='http://www.cygwin.com'>Cygwin</a> is a windows program that simulates a Linux environment. The default installation uses <code>cmd.exe</code> as the terminal program which is not very convenient. For example, it can only be resized up to 80 characters in width. Fortunately, there is an <code>rxvt</code> package in the Cygwin distribution. You only need to tweak some options to make it look like the terminal in Unix system.</p>
 
-<p>Right click "Start > Cygwin > rxvt-native" menu item, and select "Properties...", edit the "Target" field to:</p>
+<p>Right click &#8220;Start &gt; Cygwin &gt; rxvt-native&#8221; menu item, and select &#8220;Properties&#8230;&#8221;, edit the &#8220;Target&#8221; field to:</p>
 
-<pre><code>C:\path-to-cygwin\bin\rxvt.exe -display :0 -geometry 80x43 +sb -bg black -fg gray -fn "DejaVu Sans Mono-16" -tn rxvt-cygwin-native -e /bin/bash --login
-</code></pre>
+<pre><code>C:\path-to-cygwin\bin\rxvt.exe -display :0 -geometry 80x43 +sb -bg black -fg gray -fn &quot;DejaVu Sans Mono-16&quot; -tn rxvt-cygwin-native -e /bin/bash --login</code></pre>
 
-<p>You can change "<a href="http://dejavu-fonts.org">DejaVu Sans Mono</a>" font to the font name you prefer.</p>
-</div>
+<p>You can change &#8221;<a href='http://dejavu-fonts.org'>DejaVu Sans Mono</a>&#8221; font to the font name you prefer.</p></div>
 </article>
 <div id="disqus_thread"></div>
 </section>

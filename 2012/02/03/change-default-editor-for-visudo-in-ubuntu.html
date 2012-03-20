@@ -55,15 +55,13 @@
 <header><h1 class="entry-title">Change Default Editor for visudo in Ubuntu</h1>
 <p>Posted on 03 Feb 2012 | <a class="dsq-comment-count" href="/2012/02/03/change-default-editor-for-visudo-in-ubuntu.html#disqus_thread">Comments</a></p>
 </header>
-<div class="entry-content"><p>Ubuntu and Debian use the alternatives system to maintain the symbolic links for programs. When you first run <code>visudo</code>, it will prompt a list of editors for you to choose from. Unfortunately, it doesn't tell you how to change that setting again. The mostly happend situation is: you set it to "nano" at first, and can't change it to "vi" at a later time.</p>
+<div class="entry-content"><p>Ubuntu and Debian use the alternatives system to maintain the symbolic links for programs. When you first run <code>visudo</code>, it will prompt a list of editors for you to choose from. Unfortunately, it doesn&#8217;t tell you how to change that setting again. The mostly happend situation is: you set it to &#8220;nano&#8221; at first, and can&#8217;t change it to &#8220;vi&#8221; at a later time.</p>
 
 <p>Here is the command to bring up that list again:</p>
 
-<pre><code>sudo update-alternatives --config editor
-</code></pre>
+<pre><code>sudo update-alternatives --config editor</code></pre>
 
-<p>Some people suggest using command <code>EDITOR=vi visudo</code>, or <code>export EDITOR=vi; visudo</code>, but it's really annoying if you have to remember and type so many letters everytime you run this command.</p>
-</div>
+<p>Some people suggest using command <code>EDITOR=vi visudo</code>, or <code>export EDITOR=vi; visudo</code>, but it&#8217;s really annoying if you have to remember and type so many letters everytime you run this command.</p></div>
 </article>
 <div id="disqus_thread"></div>
 </section>

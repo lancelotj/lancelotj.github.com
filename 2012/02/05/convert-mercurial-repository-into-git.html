@@ -55,34 +55,25 @@
 <header><h1 class="entry-title">Convert Mercurial Repository into Git</h1>
 <p>Posted on 05 Feb 2012 | <a class="dsq-comment-count" href="/2012/02/05/convert-mercurial-repository-into-git.html#disqus_thread">Comments</a></p>
 </header>
-<div class="entry-content"><p>I have some old mercurial repositories, and recently I want to convert them into
-git repositories. It turns out that converting them is pretty easy. First, you
-need to get <a href="http://repo.or.cz/w/fast-export.git">hg-fast-export</a>:</p>
+<div class="entry-content"><p>I have some old mercurial repositories, and recently I want to convert them into git repositories. It turns out that converting them is pretty easy. First, you need to get <a href='http://repo.or.cz/w/fast-export.git'>hg-fast-export</a>:</p>
 
-<pre><code>git clone git://repo.or.cz/fast-export.git
-</code></pre>
+<pre><code>git clone git://repo.or.cz/fast-export.git</code></pre>
 
 <p>Next, create a new git repository:</p>
 
 <pre><code>mkdir new_git_repo
 cd new_git_repo
-git init
-</code></pre>
+git init</code></pre>
 
-<p>Finally, use the <code>hg-fast-export.sh</code> script from the directory you just checked
-out in the first step:</p>
+<p>Finally, use the <code>hg-fast-export.sh</code> script from the directory you just checked out in the first step:</p>
 
 <pre><code>/path/to/hg-fast-export.sh -r /path/to/hg_repo
 git-repack -a -d -f
-git checkout BRANCH_NAME
-</code></pre>
+git checkout BRANCH_NAME</code></pre>
 
-<p><code>BRANCH_NAME</code> is the name of mercurial branch, the "default" branch in mercurial
-will be called "master".</p>
+<p><code>BRANCH_NAME</code> is the name of mercurial branch, the &#8220;default&#8221; branch in mercurial will be called &#8220;master&#8221;.</p>
 
-<p><code>hg-fast-export.sh</code> supports <code>--force</code> parameter, you can use it if you get
-validation errors.</p>
-</div>
+<p><code>hg-fast-export.sh</code> supports <code>--force</code> parameter, you can use it if you get validation errors.</p></div>
 </article>
 <div id="disqus_thread"></div>
 </section>
