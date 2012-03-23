@@ -65,24 +65,32 @@ File &quot;/usr/local/lib/python2.6/dist-packages/PIL/Image.py&quot;, line 385, 
    raise IOError(&quot;decoder %s not available&quot; % decoder_name)
 IOError: decoder jpeg not available</code></pre>
 
-<p>This is because when PIL was being compiled and installed, it did not find the JPEG library. To fix this problem, run:</p>
+<p>This is because at the time PIL was being compiled, it did not find the JPEG library. To fix this problem, run:</p>
 
 <pre><code>sudo aptitude install libjpeg-dev</code></pre>
 
-<p>Then run the following commands to re-install the PIL library:</p>
+<p>Then you need to uninstall and reinstall the PIL package:</p>
 
 <pre><code>sudo rm -rf /usr/local/lib/python2.6/dist-packages/PIL
 sudo easy_install pil</code></pre>
 
-<p>Check the PIL setup summary which is inside the output messages. It shows that it supports JPEG now:</p>
+<p>Or if you are using pip:</p>
 
-<pre><code>PIL 1.1.7 SETUP SUMMARY
--------------------------------
+<pre><code>sudo pip install -I pil</code></pre>
+
+<p>In the output messages, you can find the PIL setup summary like following:</p>
+
+<pre><code>--------------------------------------------------------------------
+PIL 1.1.7 SETUP SUMMARY
+--------------------------------------------------------------------
 ...
+--- TKINTER support available
 --- JPEG support available
-...</code></pre>
+--- ZLIB (PNG/ZIP) support available
+...
+--------------------------------------------------------------------</code></pre>
 
-<p>All the commands here works under Ubuntu 10.04.</p></div>
+<p>This shows that now PIL has JPEG support. All the commands here works under Ubuntu 10.04.</p></div>
 </article>
 <div id="disqus_thread"></div>
 </section>
