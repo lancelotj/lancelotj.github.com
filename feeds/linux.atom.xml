@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mind Like Water</title><link href="/" rel="alternate"></link><link href="/feeds/linux.atom.xml" rel="self"></link><id>/</id><updated>2012-03-12T00:00:00-07:00</updated><entry><title>Install node.js in Ubuntu 10.04</title><link href="/2012/03/12/install-nodejs-in-ubuntu-1004.html" rel="alternate"></link><updated>2012-03-12T00:00:00-07:00</updated><author><name>Lance Jian</name></author><id>tag:,2012-03-12:2012/03/12/install-nodejs-in-ubuntu-1004.html</id><summary type="html">&lt;p&gt;Ubuntu 10.04 does not have a default &lt;a href="http://nodejs.org"&gt;node.js&lt;/a&gt; package. So if
+you want to use it, you need to install it manually:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;sudo aptitude install git-core curl build-essential openssl libssl-dev
+git clone https://github.com/joyent/node.git &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;cd &lt;/span&gt;node &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; git checkout v0.6.11
+./configure
+make
+sudo make install
+node -v
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;"v0.6.11" is the current release version of node.js. If you are not sure, run
+&lt;code&gt;git tag&lt;/code&gt; to check which versions are available.&lt;/p&gt;
+&lt;p&gt;Up to this point, you are able to use the &lt;code&gt;node&lt;/code&gt; command. You can then install
+&lt;code&gt;npm&lt;/code&gt; which is a package manager of node.js its own:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;curl http://npmjs.org/install.sh | sudo sh
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;After that, it's easy to install other node.js libraries. For example, to
+install &lt;code&gt;uglifyjs&lt;/code&gt;, simply run:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;sudo npm install uglify-js -g
+&lt;/pre&gt;&lt;/div&gt;</summary></entry><entry><title>Convert Mercurial Repository into Git</title><link href="/2012/02/05/convert-mercurial-repository-into-git.html" rel="alternate"></link><updated>2012-02-05T23:46:00-08:00</updated><author><name>Lance Jian</name></author><id>tag:,2012-02-05:2012/02/05/convert-mercurial-repository-into-git.html</id><summary type="html">&lt;p&gt;I have some old mercurial repositories, and recently I want to convert them into
+git repositories. It turns out that converting them is pretty easy. First, you
+need to get &lt;a href="http://repo.or.cz/w/fast-export.git"&gt;hg-fast-export&lt;/a&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;clone&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//repo.or.cz/fast-export.git&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Next, create a new git repository:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;mkdir&lt;/span&gt; &lt;span class="n"&gt;new_git_repo&lt;/span&gt;
+&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="n"&gt;new_git_repo&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;init&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Finally, use the &lt;code&gt;hg-fast-export.sh&lt;/code&gt; script from the directory you just checked
+out in the first step:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;hg&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;fast&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;export&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sh&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;hg_repo&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;repack&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;checkout&lt;/span&gt; &lt;span class="n"&gt;BRANCH_NAME&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;code&gt;BRANCH_NAME&lt;/code&gt; is the name of mercurial branch, the "default" branch in mercurial
+will be called "master".&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;hg-fast-export.sh&lt;/code&gt; supports &lt;code&gt;--force&lt;/code&gt; parameter, you can use it if you get
+validation errors.&lt;/p&gt;</summary></entry><entry><title>Change Default Editor for visudo in Ubuntu</title><link href="/2012/02/03/change-default-editor-for-visudo-in-ubuntu.html" rel="alternate"></link><updated>2012-02-03T00:00:00-08:00</updated><author><name>Lance Jian</name></author><id>tag:,2012-02-03:2012/02/03/change-default-editor-for-visudo-in-ubuntu.html</id><summary type="html">&lt;p&gt;Ubuntu and Debian use the alternatives system to maintain the symbolic links for
+programs. When you first run &lt;code&gt;visudo&lt;/code&gt;, it will prompt a list of editors for you
+to choose from. Unfortunately, it doesn't tell you how to change that setting
+again. The mostly happend situation is: you set it to "nano" at first, and can't
+change it to "vi" at a later time.&lt;/p&gt;
+&lt;p&gt;Here is the command to bring up that list again:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;update&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;alternatives&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;config&lt;/span&gt; &lt;span class="n"&gt;editor&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Some people suggest using command &lt;code&gt;EDITOR=vi visudo&lt;/code&gt;, or &lt;code&gt;export EDITOR=vi;
+visudo&lt;/code&gt;, but it's really annoying if you have to remember and type so many
+letters everytime you run this command.&lt;/p&gt;</summary></entry><entry><title>Configure Cygwin Environment</title><link href="/2012/02/01/configure-cygwin-environment.html" rel="alternate"></link><updated>2012-02-01T00:00:00-08:00</updated><author><name>Lance Jian</name></author><id>tag:,2012-02-01:2012/02/01/configure-cygwin-environment.html</id><summary type="html">&lt;p&gt;&lt;a href="http://www.cygwin.com"&gt;Cygwin&lt;/a&gt; is a windows program that simulates a Linux
+environment. The default installation uses &lt;code&gt;cmd.exe&lt;/code&gt; as the terminal program
+which is not very convenient. For example,  it can only be resized up to 80
+characters in width. Fortunately, there is an &lt;code&gt;rxvt&lt;/code&gt; package in the Cygwin
+distribution. You only need to tweak some options to make it look like the
+terminal in Unix system.&lt;/p&gt;
+&lt;p&gt;Right click "Start &amp;gt; Cygwin &amp;gt; rxvt-native" menu item, and select
+"Properties...", edit the "Target" field to:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nl"&gt;C:&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;cygwin&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="n"&gt;rxvt&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exe&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;display&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;geometry&lt;/span&gt; &lt;span class="mi"&gt;80&lt;/span&gt;&lt;span class="n"&gt;x43&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;sb&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;bg&lt;/span&gt; &lt;span class="n"&gt;black&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;fg&lt;/span&gt; &lt;span class="n"&gt;gray&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;fn&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;DejaVu Sans Mono-16&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;tn&lt;/span&gt; &lt;span class="n"&gt;rxvt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;cygwin&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;native&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bash&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;login&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You can change "&lt;a href="http://dejavu-fonts.org"&gt;DejaVu Sans Mono&lt;/a&gt;" font to the font
+name you prefer.&lt;/p&gt;</summary></entry><entry><title>Install Faenza in Ubuntu</title><link href="/2011/04/19/install-faenza-in-ubuntu.html" rel="alternate"></link><updated>2011-04-19T04:00:00-07:00</updated><author><name>Lance Jian</name></author><id>tag:,2011-04-19:2011/04/19/install-faenza-in-ubuntu.html</id><summary type="html">&lt;p&gt;&lt;a href="http://fav.me/d2v6x24"&gt;Faenza Icons&lt;/a&gt; is a very beautiful Gnome icon theme
+provided by Tiheum.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Faenza Icons" src="http://th04.deviantart.net/fs70/150/i/2011/320/6/e/faenza_icons_by_tiheum-d2v6x24.png" /&gt;&lt;/p&gt;
+&lt;p&gt;It's very easy to install this theme in Ubuntu. Just run the following commands:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;repository&lt;/span&gt; &lt;span class="n"&gt;ppa&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;tiheum&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;equinox&lt;/span&gt;
+&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;aptitude&lt;/span&gt; &lt;span class="n"&gt;update&lt;/span&gt;
+&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;aptitude&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;faenza&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;icon&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;theme&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Next, go to System-&amp;gt;Appearance-&amp;gt;Customize...-&amp;gt;Icons, choose "Faenza".&lt;/p&gt;</summary></entry><entry><title>Get the Absolute Path of the Running Bash Script</title><link href="/2011/04/13/get-the-absolute-path-of-the-running-bash-script.html" rel="alternate"></link><updated>2011-04-13T04:00:00-07:00</updated><author><name>Lance Jian</name></author><id>tag:,2011-04-13:2011/04/13/get-the-absolute-path-of-the-running-bash-script.html</id><summary type="html">&lt;p&gt;Sometimes you want to run a bash script from any directory, especially when it
+is placed or linked in a directory in the &lt;code&gt;$PATH&lt;/code&gt; environment and depends on
+other files in the same folder. The problem is: If you use a relative path for
+the other file, it will try to find the file in the current working directory.
+If you use an absolute path, you cannot move it later. So it should know where
+itself is running in order to get the correct file path.&lt;/p&gt;
+&lt;p&gt;For the impatient, here is a script example that can run from anywhere to print the
+content of file "help.txt" under the script's directory:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;relative_path&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;dirname &lt;span class="nv"&gt;$0&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;
+&lt;span class="nv"&gt;absolute_path&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; &lt;span class="nv"&gt;$relative_path&lt;/span&gt;;&lt;span class="nb"&gt;pwd&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;
+cat &lt;span class="s2"&gt;&amp;quot;$absolute_path/help.txt&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;First, it gets the relative directory. There are two situations:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;If the script is supposed to be executed directly like &lt;code&gt;./script.sh&lt;/code&gt;, use:
+    &lt;code&gt;relative_path=`dirname $0`&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If the script is supposed to be "sourced" like &lt;code&gt;source script.sh&lt;/code&gt;, use:
+    &lt;code&gt;relative_path=`dirname $BASH_SOURCE`&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Once it has the relative path, it's easy to get the absolute path:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;absolute_path&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; &lt;span class="nv"&gt;$relative_path&lt;/span&gt;;&lt;span class="nb"&gt;pwd&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This method is compatible with both Linux and Mac OS. However, it's not perfect.
+It won't work if you have changed the &lt;code&gt;cd&lt;/code&gt; command to something else using alias
+or function. Although it does not usually happen, in this case, you can use the
+other way:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;absolute_path&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;readlink -m &lt;span class="nv"&gt;$relative_path&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This command only works in Linux, so you have to pick the way suits you best.
+Now &lt;code&gt;$absolute_path&lt;/code&gt; is the absolute path of the file being executed, so you can
+use it to get other files which will be correct no matter the current working
+directory is.&lt;/p&gt;</summary></entry><entry><title>Clone a Ubuntu Virtual Machine Image</title><link href="/2011/04/09/clone-a-ubuntu-virtual-machine-image.html" rel="alternate"></link><updated>2011-04-09T02:48:00-07:00</updated><author><name>Lance Jian</name></author><id>tag:,2011-04-09:2011/04/09/clone-a-ubuntu-virtual-machine-image.html</id><summary type="html">&lt;p&gt;I recently created a Ubuntu server virtual machine image and wanted to clone it
+so that I don't need to install everything from scratch again. It turned out
+this is fairly easy.&lt;/p&gt;
+&lt;p&gt;First,  copy the image file and create a new virtual machine from it. Next,
+start and log in the "new" machine.&lt;/p&gt;
+&lt;p&gt;Now, remove &lt;code&gt;70-persistent-net.rules&lt;/code&gt;, otherwise the network will not work:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;rm&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;etc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;udev&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;rules&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;70&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;persistent&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;net&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rules&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This file will be re-generated after a reboot.&lt;/p&gt;
+&lt;p&gt;Next, change the hostname in &lt;code&gt;/etc/hostname&lt;/code&gt; and /&lt;code&gt;etc/hosts&lt;/code&gt; according to your
+preference. &lt;/p&gt;
+&lt;p&gt;Finally, reboot and enjoy the new machine.&lt;/p&gt;
+&lt;p&gt;See also: &lt;a href="http://koo.fi/tech/2010/11/28/cloning-ubuntu-1004-server-kvm-guests-efficiently/"&gt;Cloning Ubuntu 10.04 Server KVM guests efficiently&lt;/a&gt;&lt;/p&gt;</summary></entry></feed>

@@ -1,0 +1,34 @@
+/*
+	Name: Water Theme
+	Date: 2012-05-02
+	Description: 
+	Version: 2.1
+	Author: Lance Jian
+	Autor URI: http://www.lancejian.com
+*/
+
+/* Imports */
+@import url("solarized.css");
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans+Mono);
+
+#sidebar.affix {
+  top: 90px;
+}
+
+@media (max-width: 767px) {
+  #sidebar.affix {
+    position: static;
+    width: auto;
+    top: 0;
+  }
+}
+
+#main p.meta {
+  font-style: italic;
+  color: #808080;
+}
+
+h2.entry-title {
+  margin-top: 0;
+}
+

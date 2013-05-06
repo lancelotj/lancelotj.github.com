@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Mind Like Water - Python</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Lance Jian">
+
+    <link href="http://feeds.feedburner.com/lcltj" type="application/atom+xml" rel="alternate" title="Mind Like Water Atom Feed" />
+
+    <link href="/theme/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+    <link href="/theme/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/main.css" type="text/css" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <link rel="shortcut icon" href="/icon/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/static/icons/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/static/icons/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/static/icons/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="static/icons/apple-touch-icon-57-precomposed.png">
+  </head>
+  <body>
+    <div id="navbar" class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active"><a href="/">Blog</a></li>
+                            <li><a href="/contact/">Contact</a></li>
+                            <li><a href="/projects/">Projects</a></li>
+                          </ul>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <header>
+  <div class="container">
+      <h1>Mind Like Water</h1>
+      <p class="lead">Cool things about code.</p>  </div>
+</header>
+    <div class="container">
+      <div class="row">
+        <div id="main" class="span8">
+                  
+          
+    <article>
+    <header>
+      <h2 class="entry-title"><a href="/2011/04/04/pil-ioerror-decoder-jpeg-not-available.html" rel="bookmark" title="Permalink to PIL IOError: decoder jpeg not available">PIL IOError: decoder jpeg not available</a></h2> 
+      <p class="meta">Mon 04 April 2011
+ by Lance Jian in <a href="/category/python.html">Python</a>.
+</p>                </header>
+    <section>
+      <p>Today I got this error when I try to resize a JPEG image in python using the
+Python Imaging Library (PIL):</p>
+<div class="highlight"><pre><span class="n">File</span> <span class="s">&quot;/usr/local/lib/python2.6/dist-packages/PIL/Image.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1290</span><span class="p">,</span> <span class="n">in</span> <span class="n">resize</span>
+   <span class="n">self</span><span class="p">.</span><span class="n">load</span><span class="p">()</span>
+<span class="n">File</span> <span class="s">&quot;/usr/local/lib/python2.6/dist-packages/PIL/ImageFile.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">189</span><span class="p">,</span> <span class="n">in</span> <span class="n">load</span>
+   <span class="n">d</span> <span class="o">=</span> <span class="n">Image</span><span class="p">.</span><span class="n">_getdecoder</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">mode</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">decoderconfig</span><span class="p">)</span>
+<span class="n">File</span> <span class="s">&quot;/usr/local/lib/python2.6/dist-packages/PIL/Image.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">385</span><span class="p">,</span> <span class="n">in</span> <span class="n">_getdecoder</span>
+   <span class="n">raise</span> <span class="n">IOError</span><span class="p">(</span><span class="s">&quot;decoder %s not available&quot;</span> <span class="o">%</span> <span class="n">decoder_name</span><span class="p">)</span>
+<span class="nl">IOError:</span> <span class="n">decoder</span> <span class="n">jpeg</span> <span class="n">not</span> <span class="n">available</span>
+</pre></div>
+
+
+<p>This is because at the time PIL was being compiled, it did not find the JPEG
+library. To fix this problem, run:</p>
+<div class="highlight"><pre><span class="n">sudo</span> <span class="n">aptitude</span> <span class="n">install</span> <span class="n">libjpeg</span><span class="o">-</span><span class="n">dev</span>
+</pre></div>
+
+
+<p>Then you need to uninstall and reinstall the PIL package:</p>
+<div class="highlight"><pre><span class="n">sudo</span> <span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python2</span><span class="mf">.6</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">PIL</span>
+<span class="n">sudo</span> <span class="n">easy_install</span> <span class="n">pil</span>
+</pre></div>
+
+
+<p>Or if you are using pip:</p>
+<div class="highlight"><pre><span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">I</span> <span class="n">pil</span>
+</pre></div>
+
+
+<p>In the output messages, you can find the PIL setup summary like following:</p>
+<div class="highlight"><pre><span class="o">--------------------------------------------------------------------</span>
+<span class="n">PIL</span> <span class="mf">1.1.7</span> <span class="n">SETUP</span> <span class="n">SUMMARY</span>
+<span class="o">--------------------------------------------------------------------</span>
+<span class="p">...</span>
+<span class="o">---</span> <span class="n">TKINTER</span> <span class="n">support</span> <span class="n">available</span>
+<span class="o">---</span> <span class="n">JPEG</span> <span class="n">support</span> <span class="n">available</span>
+<span class="o">---</span> <span class="n">ZLIB</span> <span class="p">(</span><span class="n">PNG</span><span class="o">/</span><span class="n">ZIP</span><span class="p">)</span> <span class="n">support</span> <span class="n">available</span>
+<span class="p">...</span>
+<span class="o">--------------------------------------------------------------------</span>
+</pre></div>
+
+
+<p>This shows that now PIL has JPEG support. All the commands here works under
+Ubuntu 10.04.</p>
+    </section>
+    <footer>
+      <p><a href="/2011/04/04/pil-ioerror-decoder-jpeg-not-available.html#disqus_thread">comments</a></p>    </footer>
+    </article>
+    <div class="pagination">
+  <ul>
+                                <li class="active"><a href="/category/python.html">1</a></li>
+                              </ul>
+</div>
+        </div>
+        <!--googleoff: index -->
+        <div class="span4">
+          <div id="sidebar" class="span4">
+            <form class="form-search" action="/search/" method="get">
+            <div class="input-append">
+                <input id="search_input" type="text" class="span3 search-query" name="q"/>
+                <button type="submit" class="btn">Search</button>
+            </div>
+            </form>
+            <div class="well lclt" style="padding:8px 0">
+  <ul class="nav nav-list">
+    <li class="nav-header">Categories</li>
+        <li ><a href="/category/linux.html">Linux</a></li>
+        <li class="active"><a href="/category/python.html">Python</a></li>
+        <li ><a href="/category/tool.html">Tool</a></li>
+        <li class="nav-header">Follow Me</li>
+    <li><a href="http://feeds.feedburner.com/lcltj" type="application/atom+xml" rel="alternate">Feed</a></li>
+        <li><a href="http://twitter.com/lancelotj">Twitter</a></li>
+            <li class="nav-header">Links</li>
+          <li><a href="http://www.ui3net.com">AoQurage</a></li>
+          <li><a href="http://duganchen.ca/">Dugan Chen's Homepage</a></li>
+          <li><a href="http://www.k3vin.net">k3vin.net</a></li>
+          <li><a href="http://www.ynotmartins.com">Tony Martins</a></li>
+            </ul>
+</div>
+          </div>
+        </div>
+        <!--googleon: index-->
+      </div>
+    </div>
+    <footer>
+    <div class="container">
+      <p>Copyright &copy;2012 lancejian.com. All rights reserved. </p>
+    </div>
+    </footer>
+
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/js/main.js"></script>
+        <!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+    <![endif]-->
+  </body>
+</html>

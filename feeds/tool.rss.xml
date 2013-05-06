@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Mind Like Water</title><link>/</link><description>Cool things about code.</description><atom:link href="/feeds/tool.rss.xml" rel="self"></atom:link><lastBuildDate>Sat, 10 Mar 2012 00:00:00 -0800</lastBuildDate><item><title>Change PDF File Initial View</title><link>/2012/03/10/change-pdf-file-initial-view.html</link><description>&lt;p&gt;When you open PDF files using Adobe Reader, it will read initial view settings
+such as single page or double page stored in the PDF file. It's actually pretty
+easy to change this information in Linux:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Install pdfedit: &lt;code&gt;sudo apt-get install pdfedit&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Open the PDF file in pdfedit, right click the "catalog" node in the tree panel, choose "add item to dictionary"&lt;/li&gt;
+&lt;li&gt;Add property name: "PageLayout"&lt;/li&gt;
+&lt;li&gt;Select "name" and input "TwoPageRight"&lt;/li&gt;
+&lt;li&gt;Click "add and close"&lt;/li&gt;
+&lt;li&gt;Save the PDF file&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This adds a name in the catalog dictionary of PDF file. It will be used by the
+Acrobat Reader. There are other possibilities:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;SinglePage&lt;/li&gt;
+&lt;li&gt;OneColumn&lt;/li&gt;
+&lt;li&gt;TwoColumnLeft&lt;/li&gt;
+&lt;li&gt;TwoColumnRight&lt;/li&gt;
+&lt;li&gt;TwoPageLeft&lt;/li&gt;
+&lt;li&gt;TwoPageRight&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;"Column" means continuous page. "Page" means display as a single page. "Left"
+means start double pages  with odd-numbered pages on the left.&lt;/p&gt;
+&lt;p&gt;Please note that not all PDF viewers support this setting.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Lance Jian</dc:creator><pubDate>Sat, 10 Mar 2012 00:00:00 -0800</pubDate><guid>tag:,2012-03-10:2012/03/10/change-pdf-file-initial-view.html</guid></item><item><title>My Font for Gmail</title><link>/2011/08/26/my-font-for-gmail.html</link><description>&lt;p&gt;I have lots of plain text emails in Gmail. The format of those emails is always
+a problem: code and other nicely formated text are not aligned well because
+Gmail uses "arial,sans-serif" as the default font. I couldn't find a good
+solution to change it to a
+&lt;a href="http://en.wikipedia.org/wiki/Monospaced_font"&gt;monospaced&lt;/a&gt; one, so I decided to
+write my own Google Chrome extension: &lt;a href="https://chrome.google.com/webstore/detail/olhcogoioikcdeceiakjbandbaifohik"&gt;My Font for
+Gmail&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;This extension changes the default font of Gmail to any font you like. To use it: &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Click the "wrench" icon on upper-right corner of Chrome, &lt;/li&gt;
+&lt;li&gt;Select tools-&amp;gt;Extensions-&amp;gt;My Font for Gmail™-&amp;gt;options.&lt;/li&gt;
+&lt;li&gt;Choose a pre-defined font from the drop-down menu or enter any font in your system.&lt;/li&gt;
+&lt;li&gt;Click "Save".&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Refresh&lt;/em&gt; the Gmail page or re-open it.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Please note that this extension works best for plain-text emails.
+Rich-text(HTML) emails will possibly remain its original font because those
+emails can set their own font for each element. Usually this doesn't bother me
+since they are already well-formatted.&lt;/p&gt;
+&lt;p&gt;Source code is published at &lt;a href="https://github.com/lancelotj/myfont4gmail"&gt;my git repository&lt;/a&gt; under MIT license.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Lance Jian</dc:creator><pubDate>Fri, 26 Aug 2011 22:19:00 -0700</pubDate><guid>tag:,2011-08-26:2011/08/26/my-font-for-gmail.html</guid></item></channel></rss>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Mind Like Water - Linux</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Lance Jian">
+
+    <link href="http://feeds.feedburner.com/lcltj" type="application/atom+xml" rel="alternate" title="Mind Like Water Atom Feed" />
+
+    <link href="/theme/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+    <link href="/theme/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/main.css" type="text/css" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <link rel="shortcut icon" href="/icon/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/static/icons/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/static/icons/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/static/icons/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="static/icons/apple-touch-icon-57-precomposed.png">
+  </head>
+  <body>
+    <div id="navbar" class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active"><a href="/">Blog</a></li>
+                            <li><a href="/contact/">Contact</a></li>
+                            <li><a href="/projects/">Projects</a></li>
+                          </ul>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <header>
+  <div class="container">
+      <h1>Mind Like Water</h1>
+      <p class="lead">Cool things about code.</p>  </div>
+</header>
+    <div class="container">
+      <div class="row">
+        <div id="main" class="span8">
+                  
+          
+    <article>
+    <header>
+      <h2 class="entry-title"><a href="/2011/04/13/get-the-absolute-path-of-the-running-bash-script.html" rel="bookmark" title="Permalink to Get the Absolute Path of the Running Bash Script">Get the Absolute Path of the Running Bash Script</a></h2> 
+      <p class="meta">Wed 13 April 2011
+ by Lance Jian in <a href="/category/linux.html">Linux</a>.
+</p>                </header>
+    <section>
+      <p>Sometimes you want to run a bash script from any directory, especially when it
+is placed or linked in a directory in the <code>$PATH</code> environment and depends on
+other files in the same folder. The problem is: If you use a relative path for
+the other file, it will try to find the file in the current working directory.
+If you use an absolute path, you cannot move it later. So it should know where
+itself is running in order to get the correct file path.</p>
+<p>For the impatient, here is a script example that can run from anywhere to print the
+content of file "help.txt" under the script's directory:</p>
+<div class="highlight"><pre><span class="nv">relative_path</span><span class="o">=</span><span class="sb">`</span>dirname <span class="nv">$0</span><span class="sb">`</span>
+<span class="nv">absolute_path</span><span class="o">=</span><span class="sb">`</span><span class="nb">cd</span> <span class="nv">$relative_path</span>;<span class="nb">pwd</span><span class="sb">`</span>
+cat <span class="s2">&quot;$absolute_path/help.txt&quot;</span>
+</pre></div>
+
+
+<p>First, it gets the relative directory. There are two situations:</p>
+<ol>
+<li>
+<p>If the script is supposed to be executed directly like <code>./script.sh</code>, use:
+    <code>relative_path=`dirname $0`</code></p>
+</li>
+<li>
+<p>If the script is supposed to be "sourced" like <code>source script.sh</code>, use:
+    <code>relative_path=`dirname $BASH_SOURCE`</code></p>
+</li>
+</ol>
+<p>Once it has the relative path, it's easy to get the absolute path:</p>
+<div class="highlight"><pre><span class="nv">absolute_path</span><span class="o">=</span><span class="sb">`</span><span class="nb">cd</span> <span class="nv">$relative_path</span>;<span class="nb">pwd</span><span class="sb">`</span>
+</pre></div>
+
+
+<p>This method is compatible with both Linux and Mac OS. However, it's not perfect.
+It won't work if you have changed the <code>cd</code> command to something else using alias
+or function. Although it does not usually happen, in this case, you can use the
+other way:</p>
+<div class="highlight"><pre><span class="nv">absolute_path</span><span class="o">=</span><span class="sb">`</span>readlink -m <span class="nv">$relative_path</span><span class="sb">`</span>
+</pre></div>
+
+
+<p>This command only works in Linux, so you have to pick the way suits you best.
+Now <code>$absolute_path</code> is the absolute path of the file being executed, so you can
+use it to get other files which will be correct no matter the current working
+directory is.</p>
+    </section>
+    <footer>
+      <p><a href="/2011/04/13/get-the-absolute-path-of-the-running-bash-script.html#disqus_thread">comments</a></p>    </footer>
+    </article>
+          
+    <article>
+    <header>
+      <h2 class="entry-title"><a href="/2011/04/09/clone-a-ubuntu-virtual-machine-image.html" rel="bookmark" title="Permalink to Clone a Ubuntu Virtual Machine Image">Clone a Ubuntu Virtual Machine Image</a></h2> 
+      <p class="meta">Sat 09 April 2011
+ by Lance Jian in <a href="/category/linux.html">Linux</a>.
+</p>                </header>
+    <section>
+      <p>I recently created a Ubuntu server virtual machine image and wanted to clone it
+so that I don't need to install everything from scratch again. It turned out
+this is fairly easy.</p>
+<p>First,  copy the image file and create a new virtual machine from it. Next,
+start and log in the "new" machine.</p>
+<p>Now, remove <code>70-persistent-net.rules</code>, otherwise the network will not work:</p>
+<div class="highlight"><pre><span class="n">sudo</span> <span class="n">rm</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">udev</span><span class="o">/</span><span class="n">rules</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="mi">70</span><span class="o">-</span><span class="n">persistent</span><span class="o">-</span><span class="n">net</span><span class="p">.</span><span class="n">rules</span>
+</pre></div>
+
+
+<p>This file will be re-generated after a reboot.</p>
+<p>Next, change the hostname in <code>/etc/hostname</code> and /<code>etc/hosts</code> according to your
+preference. </p>
+<p>Finally, reboot and enjoy the new machine.</p>
+<p>See also: <a href="http://koo.fi/tech/2010/11/28/cloning-ubuntu-1004-server-kvm-guests-efficiently/">Cloning Ubuntu 10.04 Server KVM guests efficiently</a></p>
+    </section>
+    <footer>
+      <p><a href="/2011/04/09/clone-a-ubuntu-virtual-machine-image.html#disqus_thread">comments</a></p>    </footer>
+    </article>
+    <div class="pagination">
+  <ul>
+        <li><a href="/category/linux.html">Prev</a></li>
+                        <li><a href="/category/linux.html">1</a></li>
+                <li class="active"><a href="/category/linux2.html">2</a></li>
+                              </ul>
+</div>
+        </div>
+        <!--googleoff: index -->
+        <div class="span4">
+          <div id="sidebar" class="span4">
+            <form class="form-search" action="/search/" method="get">
+            <div class="input-append">
+                <input id="search_input" type="text" class="span3 search-query" name="q"/>
+                <button type="submit" class="btn">Search</button>
+            </div>
+            </form>
+            <div class="well lclt" style="padding:8px 0">
+  <ul class="nav nav-list">
+    <li class="nav-header">Categories</li>
+        <li class="active"><a href="/category/linux.html">Linux</a></li>
+        <li ><a href="/category/python.html">Python</a></li>
+        <li ><a href="/category/tool.html">Tool</a></li>
+        <li class="nav-header">Follow Me</li>
+    <li><a href="http://feeds.feedburner.com/lcltj" type="application/atom+xml" rel="alternate">Feed</a></li>
+        <li><a href="http://twitter.com/lancelotj">Twitter</a></li>
+            <li class="nav-header">Links</li>
+          <li><a href="http://www.ui3net.com">AoQurage</a></li>
+          <li><a href="http://duganchen.ca/">Dugan Chen's Homepage</a></li>
+          <li><a href="http://www.k3vin.net">k3vin.net</a></li>
+          <li><a href="http://www.ynotmartins.com">Tony Martins</a></li>
+            </ul>
+</div>
+          </div>
+        </div>
+        <!--googleon: index-->
+      </div>
+    </div>
+    <footer>
+    <div class="container">
+      <p>Copyright &copy;2012 lancejian.com. All rights reserved. </p>
+    </div>
+    </footer>
+
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/js/main.js"></script>
+        <!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+    <![endif]-->
+  </body>
+</html>

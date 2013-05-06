@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Mind Like Water - Tool</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Lance Jian">
+
+    <link href="http://feeds.feedburner.com/lcltj" type="application/atom+xml" rel="alternate" title="Mind Like Water Atom Feed" />
+
+    <link href="/theme/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+    <link href="/theme/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/main.css" type="text/css" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <link rel="shortcut icon" href="/icon/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/static/icons/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/static/icons/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/static/icons/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="static/icons/apple-touch-icon-57-precomposed.png">
+  </head>
+  <body>
+    <div id="navbar" class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active"><a href="/">Blog</a></li>
+                            <li><a href="/contact/">Contact</a></li>
+                            <li><a href="/projects/">Projects</a></li>
+                          </ul>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <header>
+  <div class="container">
+      <h1>Mind Like Water</h1>
+      <p class="lead">Cool things about code.</p>  </div>
+</header>
+    <div class="container">
+      <div class="row">
+        <div id="main" class="span8">
+                  
+          
+    <article>
+    <header>
+      <h2 class="entry-title"><a href="/2012/03/10/change-pdf-file-initial-view.html" rel="bookmark" title="Permalink to Change PDF File Initial View">Change PDF File Initial View</a></h2> 
+      <p class="meta">Sat 10 March 2012
+ by Lance Jian in <a href="/category/tool.html">Tool</a>.
+</p>                </header>
+    <section>
+      <p>When you open PDF files using Adobe Reader, it will read initial view settings
+such as single page or double page stored in the PDF file. It's actually pretty
+easy to change this information in Linux:</p>
+<ol>
+<li>Install pdfedit: <code>sudo apt-get install pdfedit</code></li>
+<li>Open the PDF file in pdfedit, right click the "catalog" node in the tree panel, choose "add item to dictionary"</li>
+<li>Add property name: "PageLayout"</li>
+<li>Select "name" and input "TwoPageRight"</li>
+<li>Click "add and close"</li>
+<li>Save the PDF file</li>
+</ol>
+<p>This adds a name in the catalog dictionary of PDF file. It will be used by the
+Acrobat Reader. There are other possibilities:</p>
+<ul>
+<li>SinglePage</li>
+<li>OneColumn</li>
+<li>TwoColumnLeft</li>
+<li>TwoColumnRight</li>
+<li>TwoPageLeft</li>
+<li>TwoPageRight</li>
+</ul>
+<p>"Column" means continuous page. "Page" means display as a single page. "Left"
+means start double pages  with odd-numbered pages on the left.</p>
+<p>Please note that not all PDF viewers support this setting.</p>
+    </section>
+    <footer>
+      <p><a href="/2012/03/10/change-pdf-file-initial-view.html#disqus_thread">comments</a></p>    </footer>
+    </article>
+          
+    <article>
+    <header>
+      <h2 class="entry-title"><a href="/2011/08/26/my-font-for-gmail.html" rel="bookmark" title="Permalink to My Font for Gmail">My Font for Gmail</a></h2> 
+      <p class="meta">Fri 26 August 2011
+ by Lance Jian in <a href="/category/tool.html">Tool</a>.
+</p>                </header>
+    <section>
+      <p>I have lots of plain text emails in Gmail. The format of those emails is always
+a problem: code and other nicely formated text are not aligned well because
+Gmail uses "arial,sans-serif" as the default font. I couldn't find a good
+solution to change it to a
+<a href="http://en.wikipedia.org/wiki/Monospaced_font">monospaced</a> one, so I decided to
+write my own Google Chrome extension: <a href="https://chrome.google.com/webstore/detail/olhcogoioikcdeceiakjbandbaifohik">My Font for
+Gmail</a>. </p>
+<p>This extension changes the default font of Gmail to any font you like. To use it: </p>
+<ol>
+<li>Click the "wrench" icon on upper-right corner of Chrome, </li>
+<li>Select tools-&gt;Extensions-&gt;My Font for Gmail™-&gt;options.</li>
+<li>Choose a pre-defined font from the drop-down menu or enter any font in your system.</li>
+<li>Click "Save".</li>
+<li><em>Refresh</em> the Gmail page or re-open it.</li>
+</ol>
+<p>Please note that this extension works best for plain-text emails.
+Rich-text(HTML) emails will possibly remain its original font because those
+emails can set their own font for each element. Usually this doesn't bother me
+since they are already well-formatted.</p>
+<p>Source code is published at <a href="https://github.com/lancelotj/myfont4gmail">my git repository</a> under MIT license.</p>
+    </section>
+    <footer>
+      <p><a href="/2011/08/26/my-font-for-gmail.html#disqus_thread">comments</a></p>    </footer>
+    </article>
+    <div class="pagination">
+  <ul>
+                                <li class="active"><a href="/category/tool.html">1</a></li>
+                              </ul>
+</div>
+        </div>
+        <!--googleoff: index -->
+        <div class="span4">
+          <div id="sidebar" class="span4">
+            <form class="form-search" action="/search/" method="get">
+            <div class="input-append">
+                <input id="search_input" type="text" class="span3 search-query" name="q"/>
+                <button type="submit" class="btn">Search</button>
+            </div>
+            </form>
+            <div class="well lclt" style="padding:8px 0">
+  <ul class="nav nav-list">
+    <li class="nav-header">Categories</li>
+        <li ><a href="/category/linux.html">Linux</a></li>
+        <li ><a href="/category/python.html">Python</a></li>
+        <li class="active"><a href="/category/tool.html">Tool</a></li>
+        <li class="nav-header">Follow Me</li>
+    <li><a href="http://feeds.feedburner.com/lcltj" type="application/atom+xml" rel="alternate">Feed</a></li>
+        <li><a href="http://twitter.com/lancelotj">Twitter</a></li>
+            <li class="nav-header">Links</li>
+          <li><a href="http://www.ui3net.com">AoQurage</a></li>
+          <li><a href="http://duganchen.ca/">Dugan Chen's Homepage</a></li>
+          <li><a href="http://www.k3vin.net">k3vin.net</a></li>
+          <li><a href="http://www.ynotmartins.com">Tony Martins</a></li>
+            </ul>
+</div>
+          </div>
+        </div>
+        <!--googleon: index-->
+      </div>
+    </div>
+    <footer>
+    <div class="container">
+      <p>Copyright &copy;2012 lancejian.com. All rights reserved. </p>
+    </div>
+    </footer>
+
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/js/main.js"></script>
+        <!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+    <![endif]-->
+  </body>
+</html>

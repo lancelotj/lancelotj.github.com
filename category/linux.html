@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Mind Like Water - Linux</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Lance Jian">
+
+    <link href="http://feeds.feedburner.com/lcltj" type="application/atom+xml" rel="alternate" title="Mind Like Water Atom Feed" />
+
+    <link href="/theme/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+    <link href="/theme/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/main.css" type="text/css" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <link rel="shortcut icon" href="/icon/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/static/icons/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/static/icons/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/static/icons/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="static/icons/apple-touch-icon-57-precomposed.png">
+  </head>
+  <body>
+    <div id="navbar" class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active"><a href="/">Blog</a></li>
+                            <li><a href="/contact/">Contact</a></li>
+                            <li><a href="/projects/">Projects</a></li>
+                          </ul>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <header>
+  <div class="container">
+      <h1>Mind Like Water</h1>
+      <p class="lead">Cool things about code.</p>  </div>
+</header>
+    <div class="container">
+      <div class="row">
+        <div id="main" class="span8">
+                  
+          
+    <article>
+    <header>
+      <h2 class="entry-title"><a href="/2012/03/12/install-nodejs-in-ubuntu-1004.html" rel="bookmark" title="Permalink to Install node.js in Ubuntu 10.04">Install node.js in Ubuntu 10.04</a></h2> 
+      <p class="meta">Mon 12 March 2012
+ by Lance Jian in <a href="/category/linux.html">Linux</a>.
+</p>                </header>
+    <section>
+      <p>Ubuntu 10.04 does not have a default <a href="http://nodejs.org">node.js</a> package. So if
+you want to use it, you need to install it manually:</p>
+<div class="highlight"><pre>sudo aptitude install git-core curl build-essential openssl libssl-dev
+git clone https://github.com/joyent/node.git <span class="o">&amp;&amp;</span> <span class="nb">cd </span>node <span class="o">&amp;&amp;</span> git checkout v0.6.11
+./configure
+make
+sudo make install
+node -v
+</pre></div>
+
+
+<p>"v0.6.11" is the current release version of node.js. If you are not sure, run
+<code>git tag</code> to check which versions are available.</p>
+<p>Up to this point, you are able to use the <code>node</code> command. You can then install
+<code>npm</code> which is a package manager of node.js its own:</p>
+<div class="highlight"><pre>curl http://npmjs.org/install.sh | sudo sh
+</pre></div>
+
+
+<p>After that, it's easy to install other node.js libraries. For example, to
+install <code>uglifyjs</code>, simply run:</p>
+<div class="highlight"><pre>sudo npm install uglify-js -g
+</pre></div>
+    </section>
+    <footer>
+      <p><a href="/2012/03/12/install-nodejs-in-ubuntu-1004.html#disqus_thread">comments</a></p>    </footer>
+    </article>
+          
+    <article>
+    <header>
+      <h2 class="entry-title"><a href="/2012/02/05/convert-mercurial-repository-into-git.html" rel="bookmark" title="Permalink to Convert Mercurial Repository into Git">Convert Mercurial Repository into Git</a></h2> 
+      <p class="meta">Sun 05 February 2012
+ by Lance Jian in <a href="/category/linux.html">Linux</a>.
+</p>                </header>
+    <section>
+      <p>I have some old mercurial repositories, and recently I want to convert them into
+git repositories. It turns out that converting them is pretty easy. First, you
+need to get <a href="http://repo.or.cz/w/fast-export.git">hg-fast-export</a>:</p>
+<div class="highlight"><pre><span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="o">:</span><span class="c1">//repo.or.cz/fast-export.git</span>
+</pre></div>
+
+
+<p>Next, create a new git repository:</p>
+<div class="highlight"><pre><span class="n">mkdir</span> <span class="n">new_git_repo</span>
+<span class="n">cd</span> <span class="n">new_git_repo</span>
+<span class="n">git</span> <span class="n">init</span>
+</pre></div>
+
+
+<p>Finally, use the <code>hg-fast-export.sh</code> script from the directory you just checked
+out in the first step:</p>
+<div class="highlight"><pre><span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">hg</span><span class="o">-</span><span class="n">fast</span><span class="o">-</span><span class="n">export</span><span class="p">.</span><span class="n">sh</span> <span class="o">-</span><span class="n">r</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">hg_repo</span>
+<span class="n">git</span><span class="o">-</span><span class="n">repack</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">d</span> <span class="o">-</span><span class="n">f</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="n">BRANCH_NAME</span>
+</pre></div>
+
+
+<p><code>BRANCH_NAME</code> is the name of mercurial branch, the "default" branch in mercurial
+will be called "master".</p>
+<p><code>hg-fast-export.sh</code> supports <code>--force</code> parameter, you can use it if you get
+validation errors.</p>
+    </section>
+    <footer>
+      <p><a href="/2012/02/05/convert-mercurial-repository-into-git.html#disqus_thread">comments</a></p>    </footer>
+    </article>
+          
+    <article>
+    <header>
+      <h2 class="entry-title"><a href="/2012/02/03/change-default-editor-for-visudo-in-ubuntu.html" rel="bookmark" title="Permalink to Change Default Editor for visudo in Ubuntu">Change Default Editor for visudo in Ubuntu</a></h2> 
+      <p class="meta">Fri 03 February 2012
+ by Lance Jian in <a href="/category/linux.html">Linux</a>.
+</p>                </header>
+    <section>
+      <p>Ubuntu and Debian use the alternatives system to maintain the symbolic links for
+programs. When you first run <code>visudo</code>, it will prompt a list of editors for you
+to choose from. Unfortunately, it doesn't tell you how to change that setting
+again. The mostly happend situation is: you set it to "nano" at first, and can't
+change it to "vi" at a later time.</p>
+<p>Here is the command to bring up that list again:</p>
+<div class="highlight"><pre><span class="n">sudo</span> <span class="n">update</span><span class="o">-</span><span class="n">alternatives</span> <span class="o">--</span><span class="n">config</span> <span class="n">editor</span>
+</pre></div>
+
+
+<p>Some people suggest using command <code>EDITOR=vi visudo</code>, or <code>export EDITOR=vi;
+visudo</code>, but it's really annoying if you have to remember and type so many
+letters everytime you run this command.</p>
+    </section>
+    <footer>
+      <p><a href="/2012/02/03/change-default-editor-for-visudo-in-ubuntu.html#disqus_thread">comments</a></p>    </footer>
+    </article>
+          
+    <article>
+    <header>
+      <h2 class="entry-title"><a href="/2012/02/01/configure-cygwin-environment.html" rel="bookmark" title="Permalink to Configure Cygwin Environment">Configure Cygwin Environment</a></h2> 
+      <p class="meta">Wed 01 February 2012
+ by Lance Jian in <a href="/category/linux.html">Linux</a>.
+</p>                </header>
+    <section>
+      <p><a href="http://www.cygwin.com">Cygwin</a> is a windows program that simulates a Linux
+environment. The default installation uses <code>cmd.exe</code> as the terminal program
+which is not very convenient. For example,  it can only be resized up to 80
+characters in width. Fortunately, there is an <code>rxvt</code> package in the Cygwin
+distribution. You only need to tweak some options to make it look like the
+terminal in Unix system.</p>
+<p>Right click "Start &gt; Cygwin &gt; rxvt-native" menu item, and select
+"Properties...", edit the "Target" field to:</p>
+<div class="highlight"><pre><span class="nl">C:</span><span class="err">\</span><span class="n">path</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">cygwin</span><span class="err">\</span><span class="n">bin</span><span class="err">\</span><span class="n">rxvt</span><span class="p">.</span><span class="n">exe</span> <span class="o">-</span><span class="n">display</span> <span class="o">:</span><span class="mi">0</span> <span class="o">-</span><span class="n">geometry</span> <span class="mi">80</span><span class="n">x43</span> <span class="o">+</span><span class="n">sb</span> <span class="o">-</span><span class="n">bg</span> <span class="n">black</span> <span class="o">-</span><span class="n">fg</span> <span class="n">gray</span> <span class="o">-</span><span class="n">fn</span> <span class="s">&quot;DejaVu Sans Mono-16&quot;</span> <span class="o">-</span><span class="n">tn</span> <span class="n">rxvt</span><span class="o">-</span><span class="n">cygwin</span><span class="o">-</span><span class="n">native</span> <span class="o">-</span><span class="n">e</span> <span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">bash</span> <span class="o">--</span><span class="n">login</span>
+</pre></div>
+
+
+<p>You can change "<a href="http://dejavu-fonts.org">DejaVu Sans Mono</a>" font to the font
+name you prefer.</p>
+    </section>
+    <footer>
+      <p><a href="/2012/02/01/configure-cygwin-environment.html#disqus_thread">comments</a></p>    </footer>
+    </article>
+          
+    <article>
+    <header>
+      <h2 class="entry-title"><a href="/2011/04/19/install-faenza-in-ubuntu.html" rel="bookmark" title="Permalink to Install Faenza in Ubuntu">Install Faenza in Ubuntu</a></h2> 
+      <p class="meta">Tue 19 April 2011
+ by Lance Jian in <a href="/category/linux.html">Linux</a>.
+</p>                </header>
+    <section>
+      <p><a href="http://fav.me/d2v6x24">Faenza Icons</a> is a very beautiful Gnome icon theme
+provided by Tiheum.</p>
+<p><img alt="Faenza Icons" src="http://th04.deviantart.net/fs70/150/i/2011/320/6/e/faenza_icons_by_tiheum-d2v6x24.png" /></p>
+<p>It's very easy to install this theme in Ubuntu. Just run the following commands:</p>
+<div class="highlight"><pre><span class="n">sudo</span> <span class="n">add</span><span class="o">-</span><span class="n">apt</span><span class="o">-</span><span class="n">repository</span> <span class="n">ppa</span><span class="o">:</span><span class="n">tiheum</span><span class="o">/</span><span class="n">equinox</span>
+<span class="n">sudo</span> <span class="n">aptitude</span> <span class="n">update</span>
+<span class="n">sudo</span> <span class="n">aptitude</span> <span class="n">install</span> <span class="n">faenza</span><span class="o">-</span><span class="n">icon</span><span class="o">-</span><span class="n">theme</span>
+</pre></div>
+
+
+<p>Next, go to System-&gt;Appearance-&gt;Customize...-&gt;Icons, choose "Faenza".</p>
+    </section>
+    <footer>
+      <p><a href="/2011/04/19/install-faenza-in-ubuntu.html#disqus_thread">comments</a></p>    </footer>
+    </article>
+    <div class="pagination">
+  <ul>
+                                <li class="active"><a href="/category/linux.html">1</a></li>
+                <li><a href="/category/linux2.html">2</a></li>
+                        <li><a href="/category/linux2.html">Next</a></li>
+      </ul>
+</div>
+        </div>
+        <!--googleoff: index -->
+        <div class="span4">
+          <div id="sidebar" class="span4">
+            <form class="form-search" action="/search/" method="get">
+            <div class="input-append">
+                <input id="search_input" type="text" class="span3 search-query" name="q"/>
+                <button type="submit" class="btn">Search</button>
+            </div>
+            </form>
+            <div class="well lclt" style="padding:8px 0">
+  <ul class="nav nav-list">
+    <li class="nav-header">Categories</li>
+        <li class="active"><a href="/category/linux.html">Linux</a></li>
+        <li ><a href="/category/python.html">Python</a></li>
+        <li ><a href="/category/tool.html">Tool</a></li>
+        <li class="nav-header">Follow Me</li>
+    <li><a href="http://feeds.feedburner.com/lcltj" type="application/atom+xml" rel="alternate">Feed</a></li>
+        <li><a href="http://twitter.com/lancelotj">Twitter</a></li>
+            <li class="nav-header">Links</li>
+          <li><a href="http://www.ui3net.com">AoQurage</a></li>
+          <li><a href="http://duganchen.ca/">Dugan Chen's Homepage</a></li>
+          <li><a href="http://www.k3vin.net">k3vin.net</a></li>
+          <li><a href="http://www.ynotmartins.com">Tony Martins</a></li>
+            </ul>
+</div>
+          </div>
+        </div>
+        <!--googleon: index-->
+      </div>
+    </div>
+    <footer>
+    <div class="container">
+      <p>Copyright &copy;2012 lancejian.com. All rights reserved. </p>
+    </div>
+    </footer>
+
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/js/main.js"></script>
+        <!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+    <![endif]-->
+  </body>
+</html>
