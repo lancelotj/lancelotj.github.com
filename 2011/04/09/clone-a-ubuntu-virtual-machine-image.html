@@ -1,136 +1,111 @@
-<!doctype html>
-
-<!--[if lt IE 7]><html class="no-js ie6 oldie" lang="en"><![endif]-->
-<!--[if IE 7]><html class="no-js ie7 oldie" lang="en"><![endif]-->
-<!--[if IE 8]><html class="no-js ie8 oldie" lang="en"><![endif]-->
-
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    
-    
-    <title>Clone a Ubuntu Virtual Machine Image | Lance Jian</title>
-    
-    <meta name="author" content="Lance Jian"/>
+    <title>Clone a Ubuntu Virtual Machine Image</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Lance Jian">
 
-    
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <link rel="alternate" type="application/rss+xml" href="http://feeds.feedburner.com/lcltj"/>
+    <link href="http://feeds.feedburner.com/lcltj" type="application/atom+xml" rel="alternate" title="Mind Like Water Atom Feed" />
 
-    
-
-    
-    
-    <link rel="stylesheet" type="text/css" href="/static/css/styles.css"/>
-    <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="/static/css/solarized.css"/>
-    
-
-    
-
-    
-    <script src="/static/js/libs.js"></script>
+    <link href="/theme/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+    <link href="/theme/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/main.css" type="text/css" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="shortcut icon" href="/icon/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/static/icons/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/static/icons/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/static/icons/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="static/icons/apple-touch-icon-57-precomposed.png">
   </head>
-
   <body>
-  <header id="header">
-    <div class="container">
-      <hgroup id="logo">
-      <h1><a href="/"><img src="/static/images/logo.png" alt="Lance Jian"/></a></h1>
-      </hgroup>
-      <nav>
-        <ul>
-          <li><a href='/' class="active">Blog</a></li>
-          <li><a href='/projects/'>Projects</a></li>
-          <li><a href='/about/'>About</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-  <div id="main">
-    <div class="container">
-      <div id="content">
-        <section id="main_section">
-<article>
-<header><h1 class="entry-title">Clone a Ubuntu Virtual Machine Image</h1>
-<p>Posted on 09 Apr 2011 | <a class="dsq-comment-count" href="/2011/04/09/clone-a-ubuntu-virtual-machine-image.html#disqus_thread">Comments</a></p>
-</header>
-<div class="entry-content"><p>I recently created a Ubuntu server virtual machine image and wanted to clone it so that I don&#8217;t need to install everything from scratch again. It turned out this is fairly easy.</p>
-
-<p>First, copy the image file and create a new virtual machine from it. Next, start and log in the &#8220;new&#8221; machine.</p>
-
-<p>Now, remove <code>70-persistent-net.rules</code>, otherwise the network will not work:</p>
-
-<pre><code>sudo rm /etc/udev/rules.d/70-persistent-net.rules</code></pre>
-
-<p>This file will be re-generated after a reboot.</p>
-
-<p>Next, change the hostname in <code>/etc/hostname</code> and /<code>etc/hosts</code> according to your preference.</p>
-
-<p>Finally, reboot and enjoy the new machine.</p>
-
-<p>See also: <a href='http://koo.fi/tech/2010/11/28/cloning-ubuntu-1004-server-kvm-guests-efficiently/'>Cloning Ubuntu 10.04 Server KVM guests efficiently</a></p></div>
-</article>
-<div id="disqus_thread"></div>
-</section>
-<section id="sidebar" class="sub_section">
-<div id="search-form">
-  <form action="/search.html" method="get">
-    <input id="search-input" type="text" name="q" placeholder="Search..."/>
-    <input type="image" src="/static/images/icon_search.png" class="search-submit" alt="Submit"/>
-  </form>
-</div>
-<ul>
-  <li>
-  <h1>Recent</h1>
-<div class="sidebox">
-  <ul class="list">
-    <li> &raquo; <a href="/2012/03/12/install-nodejs-in-ubuntu-1004.html">Install node.js in Ubuntu 10.04</a></li>
-    <li> &raquo; <a href="/2012/03/10/change-pdf-file-initial-view.html">Change PDF File Initial View</a></li>
-    <li> &raquo; <a href="/2012/02/05/convert-mercurial-repository-into-git.html">Convert Mercurial Repository into Git</a></li>
-    <li> &raquo; <a href="/2012/02/03/change-default-editor-for-visudo-in-ubuntu.html">Change Default Editor for visudo in Ubuntu</a></li>
-    <li> &raquo; <a href="/2012/02/01/configure-cygwin-environment.html">Configure Cygwin Environment</a></li>
-    <li> &raquo; <a href="/2012/01/29/cant-draw-with-mouse-in-inkscape.html">Can't Draw in Inkscape 0.48</a></li>
-    <li> &raquo; <a href="/2011/08/26/my-font-for-gmail.html">My Font for Gmail</a></li>
-    <li> &raquo; <a href="/2011/04/19/install-faenza-in-ubuntu.html">Install Faenza in Ubuntu</a></li>
-    <li> &raquo; <a href="/2011/04/13/get-absolute-path-of-the-running-bash-script.html">Get the Absolute Path of the Running Bash Script</a></li>
-    <li> &raquo; <a href="/2011/04/09/clone-a-ubuntu-virtual-machine-image.html">Clone a Ubuntu Virtual Machine Image</a></li>
-  </ul>
-  <p><a href="/archive.html">See all posts</a></p>
-</div>
-  </li>
-</ul>
-</section>
+    <div id="navbar" class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active"><a href="/">Blog</a></li>
+                            <li><a href="/contact.html">Contact</a></li>
+                            <li><a href="/projects.html">Projects</a></li>
+                          </ul>
+          </div>
+          
+        </div>
       </div>
     </div>
+    <br/>    <div class="container">
+      <div class="row">
+        <div id="main" class="span8">
+                  
+<section id="content" class="body">    
+<article>
+  <header>
+  <h2>Clone a Ubuntu Virtual Machine Image</h2>
+  <p class="meta">Sat 09 April 2011
+ by Lance Jian in <a href="/category/linux.html">Linux</a>.
+</p>  </header>
+  <div class="entry-content">
+  <p>I recently created a Ubuntu server virtual machine image and wanted to clone it
+so that I don't need to install everything from scratch again. It turned out
+this is fairly easy.</p>
+<p>First,  copy the image file and create a new virtual machine from it. Next,
+start and log in the "new" machine.</p>
+<p>Now, remove <code>70-persistent-net.rules</code>, otherwise the network will not work:</p>
+<div class="highlight"><pre><span class="n">sudo</span> <span class="n">rm</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">udev</span><span class="o">/</span><span class="n">rules</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="mi">70</span><span class="o">-</span><span class="n">persistent</span><span class="o">-</span><span class="n">net</span><span class="p">.</span><span class="n">rules</span>
+</pre></div>
+
+
+<p>This file will be re-generated after a reboot.</p>
+<p>Next, change the hostname in <code>/etc/hostname</code> and /<code>etc/hosts</code> according to your
+preference. </p>
+<p>Finally, reboot and enjoy the new machine.</p>
+<p>See also: <a href="http://koo.fi/tech/2010/11/28/cloning-ubuntu-1004-server-kvm-guests-efficiently/">Cloning Ubuntu 10.04 Server KVM guests efficiently</a></p>
   </div>
-  <footer>
+</article>
+  <div class="comments">
+    <div id="disqus_thread"></div>
+  </div>
+</section>
+        </div>
+        <!--googleoff: index -->
+        <div class="span4">
+          <div id="sidebar" class="span4">
+            <form class="form-search" action="/search/" method="get">
+            <div class="input-append">
+                <input id="search_input" type="text" class="span3 search-query" name="q"/>
+                <button type="submit" class="btn">Search</button>
+            </div>
+            </form>
+                      </div>
+        </div>
+        <!--googleon: index-->
+      </div>
+    </div>
+    <footer>
     <div class="container">
       <p>Copyright &copy;2012 lancejian.com. All rights reserved. </p>
     </div>
-  </footer>
-  
+    </footer>
 
-  
-  <script src="http://www.google.com/jsapi" type="text/javascript"></script>
-  
-  <script type="text/javascript" src="/static/js/scripts.js"></script>
-  
-	
-  
-  <script type="text/javascript">
-    var disqus_shortname = "lancejian";
-    window._gaq = [['_setAccount','UA-1637721-4'],['_trackPageview'],['_trackPageLoadTime']];
-    Modernizr.load([
-        {load: "http://"+ disqus_shortname + ".disqus.com/count.js"},
-        {load: "http://" + disqus_shortname + ".disqus.com/embed.js"},
-        {load: ("https:" == location.protocol ? "//ssl" : "//www") + ".google-analytics.com/ga.js"}
-    ]);
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/js/main.js"></script>
+        <script type="text/javascript">
+     var disqus_identifier = "2011/04/09/clone-a-ubuntu-virtual-machine-image.html";
+     $.getScript("http://lancejian.disqus.com/embed.js");
   </script>
-
-  
-  <!--[if lt IE 7 ]><script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script><![endif]-->
-  
-</body>
+      <!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+    <![endif]-->
+  </body>
 </html>
