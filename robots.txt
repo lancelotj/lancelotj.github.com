@@ -5,9 +5,7 @@ User-agent: *
 
 Allow: /
 
-Disallow: /page/
-Disallow: /search/
-Disallow: /archive.html
+Disallow: /archives.html
 Disallow: /404.html
 Disallow: /search.html
 
