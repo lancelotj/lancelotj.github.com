@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mind Like Water</title><link href="/" rel="alternate"></link><link href="/feeds/tool.atom.xml" rel="self"></link><id>/</id><updated>2012-03-10T00:00:00-08:00</updated><entry><title>Change PDF File Initial View</title><link href="/2012/03/10/change-pdf-file-initial-view.html" rel="alternate"></link><updated>2012-03-10T00:00:00-08:00</updated><author><name>Lance Jian</name></author><id>tag:,2012-03-10:2012/03/10/change-pdf-file-initial-view.html</id><summary type="html">&lt;p&gt;When you open PDF files using Adobe Reader, it will read initial view settings
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mind Like Water</title><link href="http://www.lancejian.com/" rel="alternate"></link><link href="http://www.lancejian.com/feeds/tool.atom.xml" rel="self"></link><id>http://www.lancejian.com/</id><updated>2012-03-10T00:00:00-08:00</updated><entry><title>Change PDF File Initial View</title><link href="http://www.lancejian.com/2012/03/10/change-pdf-file-initial-view.html" rel="alternate"></link><updated>2012-03-10T00:00:00-08:00</updated><author><name>Lance Jian</name></author><id>tag:www.lancejian.com,2012-03-10:2012/03/10/change-pdf-file-initial-view.html</id><summary type="html">&lt;p&gt;When you open PDF files using Adobe Reader, it will read initial view settings
 such as single page or double page stored in the PDF file. It's actually pretty
 easy to change this information in Linux:&lt;/p&gt;
 &lt;ol&gt;
@@ -22,7 +22,7 @@ Acrobat Reader. There are other possibilities:&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;"Column" means continuous page. "Page" means display as a single page. "Left"
 means start double pages  with odd-numbered pages on the left.&lt;/p&gt;
-&lt;p&gt;Please note that not all PDF viewers support this setting.&lt;/p&gt;</summary></entry><entry><title>My Font for Gmail</title><link href="/2011/08/26/my-font-for-gmail.html" rel="alternate"></link><updated>2011-08-26T22:19:00-07:00</updated><author><name>Lance Jian</name></author><id>tag:,2011-08-26:2011/08/26/my-font-for-gmail.html</id><summary type="html">&lt;p&gt;I have lots of plain text emails in Gmail. The format of those emails is always
+&lt;p&gt;Please note that not all PDF viewers support this setting.&lt;/p&gt;</summary></entry><entry><title>My Font for Gmail</title><link href="http://www.lancejian.com/2011/08/26/my-font-for-gmail.html" rel="alternate"></link><updated>2011-08-26T22:19:00-07:00</updated><author><name>Lance Jian</name></author><id>tag:www.lancejian.com,2011-08-26:2011/08/26/my-font-for-gmail.html</id><summary type="html">&lt;p&gt;I have lots of plain text emails in Gmail. The format of those emails is always
 a problem: code and other nicely formated text are not aligned well because
 Gmail uses "arial,sans-serif" as the default font. I couldn't find a good
 solution to change it to a
