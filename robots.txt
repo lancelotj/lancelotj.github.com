@@ -8,4 +8,5 @@ Allow: /
 Disallow: /archives.html
 Disallow: /404.html
 Disallow: /search.html
+Disallow: /category/
 
