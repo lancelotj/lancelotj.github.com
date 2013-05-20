@@ -6,9 +6,9 @@ $(function(){
     $.getScript("http://"+ window.disqus_shortname + ".disqus.com/count.js");
     var sidebar = $("#sidebar");
     var offset = sidebar.offset().top - $("#navbar").height() + 5;
-    console.log(offset);
     if (offset < 0) {
         ofsset = 0;
     }
     sidebar.affix({offset:{top: offset}});
+    $(".dropdown-toggle").dropdown();
 });

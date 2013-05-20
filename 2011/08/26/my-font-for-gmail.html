@@ -35,9 +35,13 @@
           <div class="nav-collapse">
             <ul class="nav">
               <li class="active"><a href="/">Blog</a></li>
-                            <li><a href="http://www.lancejian.com/contact.html">Contact</a></li>
-                            <li><a href="http://www.lancejian.com/projects.html">Projects</a></li>
-                          </ul>
+              <li class=""><a href="/pages/contact.html">Contact</a></li>
+              <li class="dropdown"><a href="#" role="button" class="dropdown-toggle">Projects <b class="caret"></b></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="/pages/myfont4gmail.html">My Font for Gmail</a></li>
+                </ul>
+              </li>
+            </ul>
           </div>
           
         </div>
@@ -59,14 +63,14 @@
 a problem: code and other nicely formated text are not aligned well because
 Gmail uses "arial,sans-serif" as the default font. I couldn't find a good
 solution to change it to a
-<a href="http://en.wikipedia.org/wiki/Monospaced_font">monospaced</a> one, so I decided to
+<a href="http://en.wikipedia.org/wiki/Monospaced_font">monospaced</a> font, so I decided to
 write my own Google Chrome extension: <a href="https://chrome.google.com/webstore/detail/olhcogoioikcdeceiakjbandbaifohik">My Font for
 Gmail</a>. </p>
 <p>This extension changes the default font of Gmail to any font you like. To use it: </p>
 <ol>
 <li>Click the "wrench" icon on upper-right corner of Chrome, </li>
 <li>Select tools-&gt;Extensions-&gt;My Font for Gmail™-&gt;options.</li>
-<li>Choose a pre-defined font from the drop-down menu or enter any font in your system.</li>
+<li>Enter any font in your system.</li>
 <li>Click "Save".</li>
 <li><em>Refresh</em> the Gmail page or re-open it.</li>
 </ol>
@@ -97,6 +101,7 @@ since they are already well-formatted.</p>
         <!--googleon: index-->
       </div>
     </div>
+    <hr/>
     <footer>
     <div class="container">
       <p>Copyright &copy;2012 lancejian.com. All rights reserved. </p>
@@ -104,7 +109,7 @@ since they are already well-formatted.</p>
     </footer>
 
     <script type="text/javascript" src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="http://www.lancejian.com/static/js/main.js"></script>
+    <script type="text/javascript" src="/static/js/main.js"></script>
         <script type="text/javascript">
      var disqus_identifier = "2011/08/26/my-font-for-gmail.html";
      $.getScript("http://lancejian.disqus.com/embed.js");

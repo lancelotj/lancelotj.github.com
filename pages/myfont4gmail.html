@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Projects</title>
+    <title>My Font for Gmail</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Lance Jian">
@@ -35,9 +35,13 @@
           <div class="nav-collapse">
             <ul class="nav">
               <li><a href="/">Blog</a></li>
-                            <li><a href="http://www.lancejian.com/contact.html">Contact</a></li>
-                            <li class="active"><a href="http://www.lancejian.com/projects.html">Projects</a></li>
-                          </ul>
+              <li class=""><a href="/pages/contact.html">Contact</a></li>
+              <li class="dropdown active"><a href="#" role="button" class="dropdown-toggle">Projects <b class="caret"></b></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="/pages/myfont4gmail.html">My Font for Gmail</a></li>
+                </ul>
+              </li>
+            </ul>
           </div>
           
         </div>
@@ -47,9 +51,24 @@
       <div class="row">
         <div id="main" class="span8">
           <section id="content" class="body">    
-    <h2 class="entry-title">Projects</h2>
-        <h2>My Font for Gmail</h2>
-<p><a href="https://chrome.google.com/webstore/detail/olhcogoioikcdeceiakjbandbaifohik">My Font for Gmail</a> is a <a href="http://www.google.com/chrome">Google Chrome</a> extension that changes the default font in <a href="http://mail.google.com/mail">Gmail</a> to any font in your system.</p>
+    <h2 class="entry-title">My Font for Gmail</h2>
+    <p><a href="https://chrome.google.com/webstore/detail/olhcogoioikcdeceiakjbandbaifohik">My Font for Gmail</a> is a Google Chrome extension that changes the default font in <a href="http://mail.google.com/mail">Gmail</a> to any font in your system.</p>
+<p>The purpose for this plugin is to make you emails look better in gmail on your
+own computer.</p>
+<p>This extension changes the default font of Gmail to any font you like. To use it: </p>
+<ol>
+<li>Click the "wrench" icon on upper-right corner of Chrome, </li>
+<li>Select tools-&gt;Extensions-&gt;My Font for Gmail™-&gt;options.</li>
+<li>Enter any font in your system.</li>
+<li>Click "Save".</li>
+<li><em>Refresh</em> the Gmail page or re-open it.</li>
+</ol>
+<p>Please note that this extension works best for plain-text emails.
+Rich-text(HTML) emails will possibly remain its original font because those
+emails can set their own font for each element. Usually this won't bother you
+since they are already well-formatted.</p>
+<p>Source code is published at <a href="https://github.com/lancelotj/myfont4gmail">my git repository</a> under MIT license.</p>
+<p>Please report any bugs or suggestions to  <a href="https://github.com/lancelotj/myfont4gmail/issues">https://github.com/lancelotj/myfont4gmail/issues</a>.</p>
 </section>
         </div>
         <!--googleoff: index -->
@@ -66,6 +85,7 @@
         <!--googleon: index-->
       </div>
     </div>
+    <hr/>
     <footer>
     <div class="container">
       <p>Copyright &copy;2012 lancejian.com. All rights reserved. </p>
@@ -73,7 +93,7 @@
     </footer>
 
     <script type="text/javascript" src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="http://www.lancejian.com/static/js/main.js"></script>
+    <script type="text/javascript" src="/static/js/main.js"></script>
         <!--[if lt IE 7 ]>
     <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
     <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>

@@ -5,21 +5,21 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://www.lancejian.com/index.html</loc>
-<lastmod>2013-05-12T09:28:25-00:00</lastmod>
+<lastmod>2013-05-20T02:47:46-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.3</priority>
 </url>
 
 <url>
-<loc>http://www.lancejian.com/contact.html</loc>
+<loc>http://www.lancejian.com/pages/contact.html</loc>
 <lastmod>2012-05-02T00:00:00-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.1</priority>
 </url>
 
 <url>
-<loc>http://www.lancejian.com/projects.html</loc>
-<lastmod>2012-05-02T00:00:00-00:00</lastmod>
+<loc>http://www.lancejian.com/pages/myfont4gmail.html</loc>
+<lastmod>2012-05-19T00:00:00-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.1</priority>
 </url>
