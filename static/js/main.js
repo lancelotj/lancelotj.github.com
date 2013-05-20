@@ -10,5 +10,5 @@ $(function(){
         ofsset = 0;
     }
     sidebar.affix({offset:{top: offset}});
-    $(".dropdown-toggle").dropdown();
+    //$(".dropdown-toggle").dropdown();
 });

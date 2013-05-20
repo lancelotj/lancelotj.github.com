@@ -1,7 +1,7 @@
 @import url('//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic');
 
 /*!
- * Bootstrap v2.3.1
+ * Bootstrap v2.3.2
  *
  * Copyright 2012 Twitter, Inc
  * Licensed under the Apache License v2.0
@@ -3030,6 +3030,15 @@ table th[class*="span"],
   display: block;
 }
 
+.dropdown-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 990;
+}
+
 .pull-right > .dropdown-menu {
   right: 0;
   left: auto;
@@ -4430,7 +4439,7 @@ input[type="submit"].btn.btn-mini {
   margin-left: -20px;
   font-size: 20px;
   font-weight: 200;
-  color: #333333;
+  color: #e33251;
   text-shadow: 0 1px 0 #f6f6f6;
 }
 
@@ -4451,7 +4460,7 @@ input[type="submit"].btn.btn-mini {
 
 .navbar-link:hover,
 .navbar-link:focus {
-  color: #333333;
+  color: #e33251;
 }
 
 .navbar .divider-vertical {
@@ -4636,7 +4645,7 @@ input[type="submit"].btn.btn-mini {
 
 .navbar .nav > li > a:focus,
 .navbar .nav > li > a:hover {
-  color: #333333;
+  color: #e33251;
   text-decoration: none;
   background-color: transparent;
 }
@@ -4750,8 +4759,8 @@ input[type="submit"].btn.btn-mini {
 
 .navbar .nav li.dropdown > a:hover .caret,
 .navbar .nav li.dropdown > a:focus .caret {
-  border-top-color: #333333;
-  border-bottom-color: #333333;
+  border-top-color: #e33251;
+  border-bottom-color: #e33251;
 }
 
 .navbar .nav li.dropdown.open > .dropdown-toggle,
