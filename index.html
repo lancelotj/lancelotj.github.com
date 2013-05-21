@@ -147,22 +147,22 @@ means start double pages  with odd-numbered pages on the left.</p>
       <p>I have some old mercurial repositories, and recently I want to convert them into
 git repositories. It turns out that converting them is pretty easy. First, you
 need to get <a href="http://repo.or.cz/w/fast-export.git">hg-fast-export</a>:</p>
-<div class="highlight"><pre><span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="o">:</span><span class="c1">//repo.or.cz/fast-export.git</span>
+<div class="highlight"><pre>git clone git://repo.or.cz/fast-export.git
 </pre></div>
 
 
 <p>Next, create a new git repository:</p>
-<div class="highlight"><pre><span class="n">mkdir</span> <span class="n">new_git_repo</span>
-<span class="n">cd</span> <span class="n">new_git_repo</span>
-<span class="n">git</span> <span class="n">init</span>
+<div class="highlight"><pre>mkdir new_git_repo
+<span class="nb">cd </span>new_git_repo
+git init
 </pre></div>
 
 
 <p>Finally, use the <code>hg-fast-export.sh</code> script from the directory you just checked
 out in the first step:</p>
-<div class="highlight"><pre><span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">hg</span><span class="o">-</span><span class="n">fast</span><span class="o">-</span><span class="n">export</span><span class="p">.</span><span class="n">sh</span> <span class="o">-</span><span class="n">r</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">hg_repo</span>
-<span class="n">git</span><span class="o">-</span><span class="n">repack</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">d</span> <span class="o">-</span><span class="n">f</span>
-<span class="n">git</span> <span class="n">checkout</span> <span class="n">BRANCH_NAME</span>
+<div class="highlight"><pre>/path/to/hg-fast-export.sh -r /path/to/hg_repo
+git-repack -a -d -f
+git checkout BRANCH_NAME
 </pre></div>
 
 
