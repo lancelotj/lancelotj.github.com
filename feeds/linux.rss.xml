@@ -24,22 +24,22 @@ install &lt;code&gt;uglifyjs&lt;/code&gt;, simply run:&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Lance Jian</dc:creator><pubDate>Mon, 12 Mar 2012 00:00:00 -0700</pubDate><guid>tag:www.lancejian.com,2012-03-12:2012/03/12/install-nodejs-in-ubuntu-1004.html</guid></item><item><title>Convert Mercurial Repository into Git</title><link>http://www.lancejian.com/2012/02/05/convert-mercurial-repository-into-git.html</link><description>&lt;p&gt;I have some old mercurial repositories, and recently I want to convert them into
 git repositories. It turns out that converting them is pretty easy. First, you
 need to get &lt;a href="http://repo.or.cz/w/fast-export.git"&gt;hg-fast-export&lt;/a&gt;:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;clone&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//repo.or.cz/fast-export.git&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;git clone git://repo.or.cz/fast-export.git
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Next, create a new git repository:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;mkdir&lt;/span&gt; &lt;span class="n"&gt;new_git_repo&lt;/span&gt;
-&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="n"&gt;new_git_repo&lt;/span&gt;
-&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;init&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;mkdir new_git_repo
+&lt;span class="nb"&gt;cd &lt;/span&gt;new_git_repo
+git init
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Finally, use the &lt;code&gt;hg-fast-export.sh&lt;/code&gt; script from the directory you just checked
 out in the first step:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;hg&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;fast&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;export&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sh&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;hg_repo&lt;/span&gt;
-&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;repack&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;
-&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;checkout&lt;/span&gt; &lt;span class="n"&gt;BRANCH_NAME&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;/path/to/hg-fast-export.sh -r /path/to/hg_repo
+git repack -a -d -f
+git checkout BRANCH_NAME
 &lt;/pre&gt;&lt;/div&gt;
 
 
