@@ -21,7 +21,7 @@ node -v
 &lt;p&gt;After that, it's easy to install other node.js libraries. For example, to
 install &lt;code&gt;uglifyjs&lt;/code&gt;, simply run:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;sudo npm install uglify-js -g
-&lt;/pre&gt;&lt;/div&gt;</summary></entry><entry><title>Convert Mercurial Repository into Git</title><link href="http://www.lancejian.com/2012/02/05/convert-mercurial-repository-into-git.html" rel="alternate"></link><updated>2012-02-05T23:46:00-08:00</updated><author><name>Lance Jian</name></author><id>tag:www.lancejian.com,2012-02-05:2012/02/05/convert-mercurial-repository-into-git.html</id><summary type="html">&lt;p&gt;I have some old mercurial repositories, and recently I want to convert them into
+&lt;/pre&gt;&lt;/div&gt;</summary></entry><entry><title>Convert Mercurial Repository to Git</title><link href="http://www.lancejian.com/2012/02/05/convert-mercurial-repository-into-git.html" rel="alternate"></link><updated>2012-02-05T23:46:00-08:00</updated><author><name>Lance Jian</name></author><id>tag:www.lancejian.com,2012-02-05:2012/02/05/convert-mercurial-repository-into-git.html</id><summary type="html">&lt;p&gt;I have some old mercurial repositories, and recently I want to convert them into
 git repositories. It turns out that converting them is pretty easy. First, you
 need to get &lt;a href="http://repo.or.cz/w/fast-export.git"&gt;hg-fast-export&lt;/a&gt;:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;git clone git://repo.or.cz/fast-export.git

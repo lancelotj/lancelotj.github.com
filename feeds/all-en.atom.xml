@@ -44,7 +44,7 @@ Acrobat Reader. There are other possibilities:&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;"Column" means continuous page. "Page" means display as a single page. "Left"
 means start double pages  with odd-numbered pages on the left.&lt;/p&gt;
-&lt;p&gt;Please note that not all PDF viewers support this setting.&lt;/p&gt;</summary></entry><entry><title>Convert Mercurial Repository into Git</title><link href="http://www.lancejian.com/2012/02/05/convert-mercurial-repository-into-git.html" rel="alternate"></link><updated>2012-02-05T23:46:00-08:00</updated><author><name>Lance Jian</name></author><id>tag:www.lancejian.com,2012-02-05:2012/02/05/convert-mercurial-repository-into-git.html</id><summary type="html">&lt;p&gt;I have some old mercurial repositories, and recently I want to convert them into
+&lt;p&gt;Please note that not all PDF viewers support this setting.&lt;/p&gt;</summary></entry><entry><title>Convert Mercurial Repository to Git</title><link href="http://www.lancejian.com/2012/02/05/convert-mercurial-repository-into-git.html" rel="alternate"></link><updated>2012-02-05T23:46:00-08:00</updated><author><name>Lance Jian</name></author><id>tag:www.lancejian.com,2012-02-05:2012/02/05/convert-mercurial-repository-into-git.html</id><summary type="html">&lt;p&gt;I have some old mercurial repositories, and recently I want to convert them into
 git repositories. It turns out that converting them is pretty easy. First, you
 need to get &lt;a href="http://repo.or.cz/w/fast-export.git"&gt;hg-fast-export&lt;/a&gt;:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;git clone git://repo.or.cz/fast-export.git
