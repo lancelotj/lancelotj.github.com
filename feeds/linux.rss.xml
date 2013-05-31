@@ -126,7 +126,7 @@ use it to get other files which will be correct no matter the current working
 directory is.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Lance Jian</dc:creator><pubDate>Wed, 13 Apr 2011 04:00:00 -0700</pubDate><guid>tag:www.lancejian.com,2011-04-13:2011/04/13/get-the-absolute-path-of-the-running-bash-script.html</guid></item><item><title>Clone a Ubuntu Virtual Machine Image</title><link>http://www.lancejian.com/2011/04/09/clone-a-ubuntu-virtual-machine-image.html</link><description>&lt;p&gt;I recently created a Ubuntu server virtual machine image in kvm and wanted to
 clone it so that I don't need to install everything from scratch again. It
 turned out this is fairly easy.&lt;/p&gt;
-&lt;p&gt;This works for any Ubuntu virtual machine.&lt;/p&gt;
+&lt;p&gt;This works for any virtual machine program including Vmware, VirtualBox, etc.&lt;/p&gt;
 &lt;p&gt;First,  copy the image file and create a new virtual machine from it. Next,
 start and log in the "new" machine.&lt;/p&gt;
 &lt;p&gt;Now, remove &lt;code&gt;70-persistent-net.rules&lt;/code&gt;, otherwise the network will not work:&lt;/p&gt;
