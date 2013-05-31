@@ -178,24 +178,25 @@ validation errors.</p>
           
     <article>
     <header>
-      <h2 class="entry-title"><a href="/2012/02/03/change-default-editor-for-visudo-in-ubuntu.html" rel="bookmark" title="Permalink to Change Default Editor for visudo in Ubuntu">Change Default Editor for visudo in Ubuntu</a></h2> 
+      <h2 class="entry-title"><a href="/2012/02/03/change-default-editor-for-visudo-in-ubuntu.html" rel="bookmark" title="Permalink to Change the Default Editor in Ubuntu">Change the Default Editor in Ubuntu</a></h2> 
       <p class="meta">Fri 03 February 2012
  by Lance Jian in <a href="http://www.lancejian.com/category/linux.html">Linux</a>.
 </p>                </header>
     <section>
-      <p>Ubuntu and Debian use the alternatives system to maintain the symbolic links for
-programs. When you first run <code>visudo</code>, it will prompt a list of editors for you
-to choose from. Unfortunately, it doesn't tell you how to change that setting
-again. The mostly happend situation is: you set it to "nano" at first, and can't
-change it to "vi" at a later time.</p>
+      <p>Ubuntu and Debian use the alternatives system to maintain the symbolic links
+for programs. For example, when you first run <code>visudo</code> after a fresh
+installation of Ubuntu, it will prompt a list of editors for you to choose
+from.  Unfortunately, it doesn't tell you how to change that setting again. The
+mostly happend situation is: you set it to "nano" at first, and want to change it
+to "vi" at a later time.</p>
 <p>Here is the command to bring up that list again:</p>
 <div class="highlight"><pre><span class="n">sudo</span> <span class="n">update</span><span class="o">-</span><span class="n">alternatives</span> <span class="o">--</span><span class="n">config</span> <span class="n">editor</span>
 </pre></div>
 
 
 <p>Some people suggest using command <code>EDITOR=vi visudo</code>, or <code>export EDITOR=vi;
-visudo</code>, but it's really annoying if you have to remember and type so many
-letters everytime you run this command.</p>
+visudo</code>. They both works, but it's really annoying that you have to remember and
+type so many letters everytime you run this command.</p>
     </section>
     <footer>
       <p><a href="http://www.lancejian.com/2012/02/03/change-default-editor-for-visudo-in-ubuntu.html#disqus_thread">comments</a></p>    </footer>
@@ -204,7 +205,7 @@ letters everytime you run this command.</p>
           
     <article>
     <header>
-      <h2 class="entry-title"><a href="/2012/02/01/configure-cygwin-environment.html" rel="bookmark" title="Permalink to Configure Cygwin Environment">Configure Cygwin Environment</a></h2> 
+      <h2 class="entry-title"><a href="/2012/02/01/configure-cygwin-environment.html" rel="bookmark" title="Permalink to Use rxvt as cygwin Terminal">Use rxvt as cygwin Terminal</a></h2> 
       <p class="meta">Wed 01 February 2012
  by Lance Jian in <a href="http://www.lancejian.com/category/linux.html">Linux</a>.
 </p>                </header>
@@ -217,12 +218,12 @@ distribution. You only need to tweak some options to make it look like the
 terminal in Unix system.</p>
 <p>Right click "Start &gt; Cygwin &gt; rxvt-native" menu item, and select
 "Properties...", edit the "Target" field to:</p>
-<div class="highlight"><pre><span class="nl">C:</span><span class="err">\</span><span class="n">path</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">cygwin</span><span class="err">\</span><span class="n">bin</span><span class="err">\</span><span class="n">rxvt</span><span class="p">.</span><span class="n">exe</span> <span class="o">-</span><span class="n">display</span> <span class="o">:</span><span class="mi">0</span> <span class="o">-</span><span class="n">geometry</span> <span class="mi">80</span><span class="n">x43</span> <span class="o">+</span><span class="n">sb</span> <span class="o">-</span><span class="n">bg</span> <span class="n">black</span> <span class="o">-</span><span class="n">fg</span> <span class="n">gray</span> <span class="o">-</span><span class="n">fn</span> <span class="s">&quot;DejaVu Sans Mono-16&quot;</span> <span class="o">-</span><span class="n">tn</span> <span class="n">rxvt</span><span class="o">-</span><span class="n">cygwin</span><span class="o">-</span><span class="n">native</span> <span class="o">-</span><span class="n">e</span> <span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">bash</span> <span class="o">--</span><span class="n">login</span>
+<div class="highlight"><pre>C:\path-to-cygwin\bin\rxvt.exe -display :0 -geometry 80x43 +sb -bg black -fg gray -fn &quot;DejaVu Sans Mono-16&quot; -tn rxvt-cygwin-native -e /bin/bash --login
 </pre></div>
 
 
-<p>You can change "<a href="http://dejavu-fonts.org">DejaVu Sans Mono</a>" font to the font
-name you prefer.</p>
+<p>You can change the "<a href="http://dejavu-fonts.org">DejaVu Sans Mono</a>" font to any
+other font name you prefer.</p>
     </section>
     <footer>
       <p><a href="http://www.lancejian.com/2012/02/01/configure-cygwin-environment.html#disqus_thread">comments</a></p>    </footer>

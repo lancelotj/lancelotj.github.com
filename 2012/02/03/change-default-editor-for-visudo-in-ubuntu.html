@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Change Default Editor for visudo in Ubuntu</title>
+    <title>Change the Default Editor in Ubuntu</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Lance Jian">
@@ -61,24 +61,25 @@
 <section id="content" class="body">    
 <article>
   <header>
-  <h2>Change Default Editor for visudo in Ubuntu</h2>
+  <h2>Change the Default Editor in Ubuntu</h2>
   <p class="meta">Fri 03 February 2012
  by Lance Jian in <a href="http://www.lancejian.com/category/linux.html">Linux</a>.
 </p>  </header>
   <div class="entry-content">
-  <p>Ubuntu and Debian use the alternatives system to maintain the symbolic links for
-programs. When you first run <code>visudo</code>, it will prompt a list of editors for you
-to choose from. Unfortunately, it doesn't tell you how to change that setting
-again. The mostly happend situation is: you set it to "nano" at first, and can't
-change it to "vi" at a later time.</p>
+  <p>Ubuntu and Debian use the alternatives system to maintain the symbolic links
+for programs. For example, when you first run <code>visudo</code> after a fresh
+installation of Ubuntu, it will prompt a list of editors for you to choose
+from.  Unfortunately, it doesn't tell you how to change that setting again. The
+mostly happend situation is: you set it to "nano" at first, and want to change it
+to "vi" at a later time.</p>
 <p>Here is the command to bring up that list again:</p>
 <div class="highlight"><pre><span class="n">sudo</span> <span class="n">update</span><span class="o">-</span><span class="n">alternatives</span> <span class="o">--</span><span class="n">config</span> <span class="n">editor</span>
 </pre></div>
 
 
 <p>Some people suggest using command <code>EDITOR=vi visudo</code>, or <code>export EDITOR=vi;
-visudo</code>, but it's really annoying if you have to remember and type so many
-letters everytime you run this command.</p>
+visudo</code>. They both works, but it's really annoying that you have to remember and
+type so many letters everytime you run this command.</p>
   </div>
 </article>
 <hr/>

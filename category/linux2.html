@@ -126,20 +126,21 @@ directory is.</p>
  by Lance Jian in <a href="http://www.lancejian.com/category/linux.html">Linux</a>.
 </p>                </header>
     <section>
-      <p>I recently created a Ubuntu server virtual machine image and wanted to clone it
-so that I don't need to install everything from scratch again. It turned out
-this is fairly easy.</p>
+      <p>I recently created a Ubuntu server virtual machine image in kvm and wanted to
+clone it so that I don't need to install everything from scratch again. It
+turned out this is fairly easy.</p>
+<p>This works for any Ubuntu virtual machine.</p>
 <p>First,  copy the image file and create a new virtual machine from it. Next,
 start and log in the "new" machine.</p>
 <p>Now, remove <code>70-persistent-net.rules</code>, otherwise the network will not work:</p>
-<div class="highlight"><pre><span class="n">sudo</span> <span class="n">rm</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">udev</span><span class="o">/</span><span class="n">rules</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="mi">70</span><span class="o">-</span><span class="n">persistent</span><span class="o">-</span><span class="n">net</span><span class="p">.</span><span class="n">rules</span>
+<div class="highlight"><pre>sudo rm /etc/udev/rules.d/70-persistent-net.rules
 </pre></div>
 
 
 <p>This file will be re-generated after a reboot.</p>
 <p>Next, change the hostname in <code>/etc/hostname</code> and /<code>etc/hosts</code> according to your
-preference. </p>
-<p>Finally, reboot and enjoy the new machine.</p>
+preference.</p>
+<p>Finally, reboot and enjoy using the new virtual machine.</p>
 <p>See also: <a href="http://koo.fi/tech/2010/11/28/cloning-ubuntu-1004-server-kvm-guests-efficiently/">Cloning Ubuntu 10.04 Server KVM guests efficiently</a></p>
     </section>
     <footer>

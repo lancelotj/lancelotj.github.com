@@ -68,43 +68,43 @@
   <div class="entry-content">
   <p>Today I got this error when I try to resize a JPEG image in python using the
 Python Imaging Library (PIL):</p>
-<div class="highlight"><pre><span class="n">File</span> <span class="s">&quot;/usr/local/lib/python2.6/dist-packages/PIL/Image.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1290</span><span class="p">,</span> <span class="n">in</span> <span class="n">resize</span>
-   <span class="n">self</span><span class="p">.</span><span class="n">load</span><span class="p">()</span>
-<span class="n">File</span> <span class="s">&quot;/usr/local/lib/python2.6/dist-packages/PIL/ImageFile.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">189</span><span class="p">,</span> <span class="n">in</span> <span class="n">load</span>
-   <span class="n">d</span> <span class="o">=</span> <span class="n">Image</span><span class="p">.</span><span class="n">_getdecoder</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">mode</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">decoderconfig</span><span class="p">)</span>
-<span class="n">File</span> <span class="s">&quot;/usr/local/lib/python2.6/dist-packages/PIL/Image.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">385</span><span class="p">,</span> <span class="n">in</span> <span class="n">_getdecoder</span>
-   <span class="n">raise</span> <span class="n">IOError</span><span class="p">(</span><span class="s">&quot;decoder %s not available&quot;</span> <span class="o">%</span> <span class="n">decoder_name</span><span class="p">)</span>
-<span class="nl">IOError:</span> <span class="n">decoder</span> <span class="n">jpeg</span> <span class="n">not</span> <span class="n">available</span>
+<div class="highlight"><pre>File &quot;/usr/local/lib/python2.6/dist-packages/PIL/Image.py&quot;, line 1290, in resize
+   self.load()
+File &quot;/usr/local/lib/python2.6/dist-packages/PIL/ImageFile.py&quot;, line 189, in load
+   d = Image._getdecoder(self.mode, d, a, self.decoderconfig)
+File &quot;/usr/local/lib/python2.6/dist-packages/PIL/Image.py&quot;, line 385, in _getdecoder
+   raise IOError(&quot;decoder %s not available&quot; % decoder_name)
+IOError: decoder jpeg not available
 </pre></div>
 
 
 <p>This is because at the time PIL was being compiled, it did not find the JPEG
 library. To fix this problem, run:</p>
-<div class="highlight"><pre><span class="n">sudo</span> <span class="n">aptitude</span> <span class="n">install</span> <span class="n">libjpeg</span><span class="o">-</span><span class="n">dev</span>
+<div class="highlight"><pre>sudo aptitude install libjpeg-dev
 </pre></div>
 
 
 <p>Then you need to uninstall and reinstall the PIL package:</p>
-<div class="highlight"><pre><span class="n">sudo</span> <span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python2</span><span class="mf">.6</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">PIL</span>
-<span class="n">sudo</span> <span class="n">easy_install</span> <span class="n">pil</span>
+<div class="highlight"><pre>sudo rm -rf /usr/local/lib/python2.6/dist-packages/PIL
+sudo easy_install pil
 </pre></div>
 
 
 <p>Or if you are using pip:</p>
-<div class="highlight"><pre><span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">I</span> <span class="n">pil</span>
+<div class="highlight"><pre>sudo pip install -I pil
 </pre></div>
 
 
 <p>In the output messages, you can find the PIL setup summary like following:</p>
-<div class="highlight"><pre><span class="o">--------------------------------------------------------------------</span>
-<span class="n">PIL</span> <span class="mf">1.1.7</span> <span class="n">SETUP</span> <span class="n">SUMMARY</span>
-<span class="o">--------------------------------------------------------------------</span>
-<span class="p">...</span>
-<span class="o">---</span> <span class="n">TKINTER</span> <span class="n">support</span> <span class="n">available</span>
-<span class="o">---</span> <span class="n">JPEG</span> <span class="n">support</span> <span class="n">available</span>
-<span class="o">---</span> <span class="n">ZLIB</span> <span class="p">(</span><span class="n">PNG</span><span class="o">/</span><span class="n">ZIP</span><span class="p">)</span> <span class="n">support</span> <span class="n">available</span>
-<span class="p">...</span>
-<span class="o">--------------------------------------------------------------------</span>
+<div class="highlight"><pre>--------------------------------------------------------------------
+PIL 1.1.7 SETUP SUMMARY
+--------------------------------------------------------------------
+...
+--- TKINTER support available
+--- JPEG support available
+--- ZLIB (PNG/ZIP) support available
+...
+--------------------------------------------------------------------
 </pre></div>
 
 
