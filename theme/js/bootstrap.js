@@ -685,10 +685,6 @@
       clearMenus()
 
       if (!isActive) {
-        if ('ontouchstart' in document.documentElement && !$parent.closest('.navbar-nav').length) {
-          // if mobile we we use a backdrop because click events don't delegate
-          $('<div class="dropdown-backdrop"/>').insertBefore($(this)).on('click', clearMenus)
-        }
         $parent.toggleClass('open')
       }
 
